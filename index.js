@@ -1,7 +1,7 @@
 import authComponentData from './data/auth-component.json';
 import bankComponentData from './data/bank-component.json';
 
-module.exports.getComponentData = (id) => {
+exports.getComponentData = (id) => {
   switch (id) {
     case '72520fc5-6be5-4ee5-b986-0e688ab4adff':
       return authComponentData;
