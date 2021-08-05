@@ -1,5 +1,5 @@
-import authComponentData from './data/auth-component.json';
-import bankComponentData from './data/bank-component.json';
+const authComponentData = require('./data/auth-component.json');
+const bankComponentData = require('./data/bank-component.json');
 
 exports.getComponentData = (id) => {
   switch (id) {
