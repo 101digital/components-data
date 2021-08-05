@@ -1,7 +1,7 @@
 const authComponentData = require('./data/auth-component.json');
 const bankComponentData = require('./data/bank-component.json');
 
-exports.getComponentData = (id) => {
+exports.getDataByComponentId = (id) => {
   switch (id) {
     case '72520fc5-6be5-4ee5-b986-0e688ab4adff':
       return authComponentData;
