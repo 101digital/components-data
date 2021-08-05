@@ -5,11 +5,13 @@ This repository to manage all components data and using for auto generate code w
 ## Required
 
 Make sure you have permission to access this repo, then can use `yarn` or `npm` to install this package.
-Run below command in th generator extension
+Run below command in the generator extension
 
 ```
 yarn add git+ssh://git@github.com:101digital/components-data.git --dev
 ```
+
+To get more detail how to install private repository, can found here: [https://nts.strzibny.name/using-private-github-repositories-with-yarn-and-npm-in-package-json/]
 
 ## Data structure
 
