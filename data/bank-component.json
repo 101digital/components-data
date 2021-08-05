@@ -7,7 +7,21 @@
     "openBankAispClient": "string",
     "openBankAuthClient": "string"
   },
-  "dependencies": [],
+  "dependencies": [
+    { "name": "https://github.com/101digital/react-native-theme-component.git" },
+    {
+      "name": "react-native-snap-carousel",
+      "version": "^3.9.1",
+      "typescript": {
+        "name": "@types/react-native-snap-carousel",
+        "version": "^3.8.3"
+      }
+    },
+    {
+      "name": "moment"
+    },
+    { "name": "react-native-webview", "version": "^10.8.3" }
+  ],
   "templates": [
     {
       "id": "9decef3a-ea46-4f5c-a43b-c3c7e12d46cb",
