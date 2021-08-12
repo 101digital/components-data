@@ -8,7 +8,7 @@ exports.getDataByComponentId = (id) => {
       return authComponentData;
     case 'fc1456e9-5a30-4d02-bed5-8fc3a3367ab3':
       return bankComponentData;
-    case 'd4cc3288-fa4a-4fd7-8ae2-cdd26a06d215':
+    case '74a603bd-a36a-4f2b-bc18-385a4101878c':
       return themeComponentData;
     default:
       break;
