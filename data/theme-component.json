@@ -2,7 +2,7 @@
   "id": "74a603bd-a36a-4f2b-bc18-385a4101878c",
   "name": "ThemeComponent",
   "repository": "https://github.com/101digital/react-native-theme-component",
-  "dependencies": [],
+  "dependencies": [{ "name": "@react-native-community/async-storage", "version": "^1.12.0" }],
   "templates": [],
   "texts": {
     "common": {
@@ -11,6 +11,10 @@
       "btn_confirm": "OK",
       "btn_cancel": "Cancel",
       "msg_error_id": "(Error: %s)"
+    },
+    "country_picker": {
+      "lbl_select_country": "Select a country",
+      "plh_search_country": "Search country"
     }
   }
 }
