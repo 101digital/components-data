@@ -1,6 +1,7 @@
 const authComponentData = require('./data/auth-component.json');
 const bankComponentData = require('./data/bank-component.json');
 const themeComponentData = require('./data/theme-component.json');
+const productComparionData = require('./data/product-comparison-component.json');
 
 exports.getDataByComponentId = (id) => {
   switch (id) {
@@ -10,6 +11,8 @@ exports.getDataByComponentId = (id) => {
       return bankComponentData;
     case '74a603bd-a36a-4f2b-bc18-385a4101878c':
       return themeComponentData;
+    case 'fddeac89-dae0-40ed-913b-afe990e5c1d7':
+      return productComparionData;
     default:
       break;
   }
