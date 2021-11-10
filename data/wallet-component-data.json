@@ -40,15 +40,15 @@
       "body": "<WalletComponent ref={accountRef} Root={{ props: { i18n: i18n, formatCurrency: useCurrencyFormat, bankImages: bankImages, }, }} Balance={{ style: { containerStyle: { backgroundColor: colors.primaryColor, }, titleTextStyle: { color: 'white', }, amountTextStyle: { fontSize: 35, lineHeight: 53, color: 'white', }, }, }} WalletItem={{ props: { onItemPressed: (wallet) => { accountRef?.current?.showActionsSheet(wallet); }, }, components: { recommandBanner: (wallet) => ( <RecommandBannerComponent i18n={i18n} walletId={wallet.walletId} formatCurrency={(amount) => useCurrencyFormat(amount, wallet.currencyCode)} gradientColors={['#5d21d2', '#8B5DE6']} onTakeLook={() => { $fn-look-recommand }} /> ), }, }} LinkAccountButton={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, }} EmptyWallet={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, style: { buttonTextStyle: { color: colors.primaryColor, }, }, }} ActionSheet={{ props: { onSetPrimary: (wallet) => { accountRef?.current?.setAsPrimary(wallet); }, onUnlink: (wallet) => { accountRef?.current?.unlinkWallet(wallet); }, onViewTransactions: (wallet) => { $fn-view-transaction }, onShare: (wallet) => { $fn-share-account }, }, }} ConfirmSetPrimaryModal={{ props: { isFullWidth: false, isShowClose: false, }, }} ConfirmUnlinkModal={{ props: { isFullWidth: false, isShowClose: false, }, }} /> <ErrorModal error={getErrorDetails(errorUnlinkWallet)} onClose={clearWalletErrors} /> <ErrorModal error={getErrorDetails(errorLinkWallet)} onClose={clearWalletErrors} /> <ErrorModal error={getErrorDetails(errorUpdatePrimary)} onClose={clearWalletErrors} />",
       "functions": [
         {
-          "id": "$fn-look-recommand",
+          "id": "fn-look-recommand",
           "params": []
         },
         {
-          "id": "$fn-link-account",
+          "id": "fn-link-account",
           "params": []
         },
         {
-          "id": "$fn-view-transaction",
+          "id": "fn-view-transaction",
           "params": [
             {
               "name": "wallet",
@@ -57,7 +57,7 @@
           ]
         },
         {
-          "id": "$fn-share-account",
+          "id": "fn-share-account",
           "params": [
             {
               "name": "wallet",
