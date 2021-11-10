@@ -9,13 +9,16 @@
   "config": {
     "env": {
       "development": {
-        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0"
+        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0",
+        "financialBaseUrl": "https://sandbox.101digital.io/financial-profile-service/1.0.0"
       },
       "staging": {
-        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0"
+        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0",
+        "financialBaseUrl": "https://sandbox.101digital.io/financial-profile-service/1.0.0"
       },
       "production": {
-        "walletBaseUrl": "https://api.101digital.io/wallet-service/v1.0"
+        "walletBaseUrl": "https://api.101digital.io/wallet-service/v1.0",
+        "financialBaseUrl": "https://api.101digital.io/financial-profile-service/1.0.0"
       }
     }
   },
@@ -32,39 +35,35 @@
       "id": "wallet-component-template-1",
       "templateName": "Wallet component template",
       "componentName": "WalletComponent",
-      "import": "import { LoginComponent } from 'react-native-auth-component';\nimport { i18n } from '@/translations/translation-config';",
-      "header": "",
-      "body": "<LoginComponent Root={{ props: { i18n: i18n, onLoginSuccess: (profile) => { $c59e10ee-e0f2-4c66-8f48-9a7574583fb7 }, onLoginFailed: (error) => { $e70094ab-9b8d-45fe-ae8f-9ad40bbbf23c }, onPressForgotPassword: () => { $c23dc9e4-5a70-41e7-bc30-83e9fdad3cac }, onPressRegister: () => { $01c73fba-7060-49ec-acd2-2afbf3e7fda2 }, }, }}  InputForm={{ style: { passwordInputFieldStyle: { containerStyle: { marginTop: 24, }, }, }, props: { type: 'email', },}}/>",
+      "import": "import { WalletComponent, WalletComponentRefs, WalletContext } from '@banking-component/wallet-component';\nimport { AccountLinkingContext } from '@banking-component/account-linking';\nimport { ErrorModal, ThemeContext, useCurrencyFormat } from 'react-native-theme-component';\nimport { CompasionRequestParams, ProductContext, RecommandBannerComponent } from 'product-comparison-component';\nimport { isEmpty } from '@banking-component/core';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
+      "header": "\n\tconst accountRef = useRef<WalletComponentRefs>();\n\tconst { fetchWallets, wallets, errorUnlinkWallet, errorUpdatePrimary, clearWalletErrors, errorLinkWallet } = useContext(WalletContext);\n\tconst { bankImages } = useContext(AccountLinkingContext);\n\tconst { i18n, colors } = useContext(ThemeContext);\n\tconst { getComparisons, comparisons, clearComparisons } = useContext(ProductContext);\n\tuseEffect(() => {\n\t\tif (isEmpty(wallets)) {\n\t\t\tfetchWallets();\n\t\t}\n\t}, []);\n\tuseEffect(() => {\n\t\tif (!isEmpty(wallets)) {\n\t\t\tconst params: CompasionRequestParams[] = wallets.map((w) => ({\n\t\t\t\twalletId: w.walletId,\n\t\t\t\taccountSubtype: w.bankAccount.accountSubType,\n\t\t\t\tproductId: w.bankAccount.productId,\n\t\t\t\tamount: Math.abs(w.currentBalance),\n\t\t\t\tproductCategory: w.bankAccount.internalProductCategory,\n\t\t\t\tcountryCode: w.bankAccount.countryCode,\n\t\t\t\tbankId: w.bankAccount.bankCode,\n\t\t\t}));\n\t\t\tclearComparisons();\n\t\t\tgetComparisons(params);\n\t\t}\n\t}, [wallets]);\n\tuseEffect(() => {\n\t\tif (!isEmpty(comparisons)) {\n\t\t\tfor (var c of comparisons) {\n\t\t\t\tconst _wallet = wallets.find((w) => w.walletId === c.walletId);\n\t\t\t\tif (_wallet) {\n\t\t\t\t\taccountRef?.current?.showRecommandBanner(_wallet);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}, [comparisons.length]);",
+      "body": "<WalletComponent ref={accountRef} Root={{ props: { i18n: i18n, formatCurrency: useCurrencyFormat, bankImages: bankImages, }, }} Balance={{ style: { containerStyle: { backgroundColor: colors.primaryColor, }, titleTextStyle: { color: 'white', }, amountTextStyle: { fontSize: 35, lineHeight: 53, color: 'white', }, }, }} WalletItem={{ props: { onItemPressed: (wallet) => { accountRef?.current?.showActionsSheet(wallet); }, }, components: { recommandBanner: (wallet) => ( <RecommandBannerComponent i18n={i18n} walletId={wallet.walletId} formatCurrency={(amount) => useCurrencyFormat(amount, wallet.currencyCode)} gradientColors={['#5d21d2', '#8B5DE6']} onTakeLook={() => { $fn-look-recommand }} /> ), }, }} LinkAccountButton={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, }} EmptyWallet={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, style: { buttonTextStyle: { color: colors.primaryColor, }, }, }} ActionSheet={{ props: { onSetPrimary: (wallet) => { accountRef?.current?.setAsPrimary(wallet); }, onUnlink: (wallet) => { accountRef?.current?.unlinkWallet(wallet); }, onViewTransactions: (wallet) => { $fn-view-transaction }, onShare: (wallet) => { $fn-share-account }, }, }} ConfirmSetPrimaryModal={{ props: { isFullWidth: false, isShowClose: false, }, }} ConfirmUnlinkModal={{ props: { isFullWidth: false, isShowClose: false, }, }} /> <ErrorModal error={getErrorDetails(errorUnlinkWallet)} onClose={clearWalletErrors} /> <ErrorModal error={getErrorDetails(errorLinkWallet)} onClose={clearWalletErrors} /> <ErrorModal error={getErrorDetails(errorUpdatePrimary)} onClose={clearWalletErrors} />",
       "functions": [
         {
-          "id": "c59e10ee-e0f2-4c66-8f48-9a7574583fb7",
-          "name": "onLoginSuccess",
+          "id": "$fn-look-recommand",
+          "params": []
+        },
+        {
+          "id": "$fn-link-account",
+          "params": []
+        },
+        {
+          "id": "$fn-view-transaction",
           "params": [
             {
-              "name": "profile",
-              "type": "Profile"
+              "name": "wallet",
+              "type": "Wallet"
             }
           ]
         },
         {
-          "id": "e70094ab-9b8d-45fe-ae8f-9ad40bbbf23c",
-          "name": "onLoginFailed",
+          "id": "$fn-share-account",
           "params": [
             {
-              "name": "error",
-              "type": "Error"
+              "name": "wallet",
+              "type": "Wallet"
             }
           ]
-        },
-        {
-          "id": "c23dc9e4-5a70-41e7-bc30-83e9fdad3cac",
-          "name": "onPressForgotPassword",
-          "params": []
-        },
-        {
-          "id": "01c73fba-7060-49ec-acd2-2afbf3e7fda2",
-          "name": "onPressRegister",
-          "params": []
         }
       ]
     }
@@ -86,7 +85,37 @@
       "btn_link_bank_account": "Link Bank Account",
       "lbl_set_as_primary": "Set as primary",
       "lbl_primary": "Primary",
-      "msg_no_wallet": "No Bank Account Linked"
+      "msg_no_wallet": "No Bank Account Linked",
+      "btn_view_cashflow": "View Cashflow",
+      "lbl_cashflow": "Cashflow",
+      "msg_cashflow": "View cashflow chart for your money in & money out to analyse your spending.",
+      "btn_view": "View",
+      "btn_share_information": "Share Information"
+    },
+    "share_information_component": {
+      "lbl_recipient_email": "Recipient Email",
+      "plh_enter_recipient_email": "Enter recipient email",
+      "lbl_message": "Message (Optional)",
+      "plh_enter_message": "Enter message",
+      "lbl_data_share": "Data To Share",
+      "lbl_data_account": "Account",
+      "lbl_select_account": "Select a account",
+      "lbl_account_transaction": "Account & Transaction Details",
+      "lbl_invoices": "Invoices",
+      "lbl_date_range": "Date Range",
+      "lbl_from": "From",
+      "lbl_to": "To",
+      "val_enter_email": "Recipient email is required",
+      "val_email_invalid": "Recipient email is invalid",
+      "lbl_send_copy": "Send me a copy of this",
+      "btn_cancel": "Cancel",
+      "btn_share": "Share",
+      "btn_continue": "Continue",
+      "lbl_confirmation": "Confirmation",
+      "msg_confirm_share": "Are you sure you want to share these sensitive information? Please click “Continue” to proceed.",
+      "msg_shared_successfully": "Account Information are sent successfully",
+      "lbl_unable_share": "Unable to share",
+      "msg_share_failed": "An error occured while trying to share your transaction details. Please try again."
     }
   }
 }
