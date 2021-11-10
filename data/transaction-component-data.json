@@ -27,7 +27,22 @@
       "name": "https://gitpkg.now.sh/101digital/react-native-banking-components/packages/core"
     }
   ],
-  "templates": [],
+  "templates": [
+    {
+      "id": "transaction-component-template-1",
+      "templateName": "Transaction component template 1",
+      "componentName": "WalletComponent",
+      "import": "import { Dimensions } from 'react-native';\nimport { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal, ThemeContext, useCurrencyFormat } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';\nconst { width } = Dimensions.get('window');",
+      "header": "\tconst initWallet = route?.params?.wallet;\n\tconst { transactionError, clearTransactionError } = useContext(TransactionContext);\n\tconst { wallets, getAggregatedWallets } = useContext(WalletContext);\n\tconst isConnected = useSelector((state: RootState) => state.networkInfo.isConnected);\n\tconst { i18n } = useContext(ThemeContext);",
+      "body": "<TransactionComponent CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width, }, }} Root={{ props: { i18n: i18n, wallets: wallets, aggregatedWallets: getAggregatedWallets(), initWallet, formatCurrency: currencyFormat, }, }} EmptyWallet={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, }} />\n<ErrorModal error={getErrorDetails(transactionError)} onClose={clearTransactionError} timeOut />",
+      "functions": [
+        {
+          "id": "fn-link-account",
+          "params": []
+        }
+      ]
+    }
+  ],
   "texts": {
     "transaction_component": {
       "msg_no_transaction": "No Transactions Found",
