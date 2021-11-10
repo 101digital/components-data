@@ -58,7 +58,7 @@
       "id": "login-bank-template-1",
       "templateName": "Login bank template 1",
       "componentName": "BankLoginComponent",
-      "import": "import { AccountLinkingContext, BankLoginComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal } from 'react-native-theme-component';",
+      "import": "import { AccountLinkingContext, BankLoginComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
       "header": "\tconst { bank } = route.params;\n\tconst { errorConfirmConsent, errorLoadConsent, clearBankErrors } = useContext(AccountLinkingContext);\n\tconst { linkWallet } = useContext(WalletContext);",
       "body": "<BankLoginComponent bank={bank} onConfirmed={(consentId) => { $fn-open-select-account }} onLinked={(bankId, consentId) => { linkWallet(bankId, consentId) \n $fn-open-my-account }} />\n<ErrorModal error={getErrorDetails(errorLoadConsent)} onClose={clearBankErrors} timeOut />\n<ErrorModal error={getErrorDetails(errorConfirmConsent)} onClose={clearBankErrors} timeOut />",
       "functions": [
@@ -87,7 +87,7 @@
       "componentName": "ConsentComponent",
       "import": "import { ConsentComponent } from '@banking-component/account-linking';\nimport { ThemeContext } from 'react-native-theme-component';",
       "header": "\tconst { bank } = route.params;\n\tconst { i18n } = useContext(ThemeContext);",
-      "body": "<ConsentComponent Root={{ props: { i18n: i18n, bank: bank, onContinue: () => { $fn-open-bank-login }, { bank }), }, }} />",
+      "body": "<ConsentComponent Root={{ props: { i18n: i18n, bank: bank, onContinue: () => { $fn-open-bank-login }, }, }} />",
       "functions": [
         {
           "id": "fn-open-bank-login",

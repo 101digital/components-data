@@ -1,6 +1,6 @@
 {
   "name": "components-data",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "repository": "https://github.com/101digital/components-data",
   "description": "Provide data for other component",
   "main": "index.js",
