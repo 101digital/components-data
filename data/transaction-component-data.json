@@ -37,8 +37,30 @@
       "body": "<TransactionComponent CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width, }, }} Root={{ props: { i18n: i18n, wallets: wallets, aggregatedWallets: getAggregatedWallets(), initWallet, formatCurrency: currencyFormat, }, }} EmptyWallet={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, }} />\n<ErrorModal error={getErrorDetails(transactionError)} onClose={clearTransactionError} timeOut />",
       "functions": [
         {
+          "id": "fn-look-recommand",
+          "params": []
+        },
+        {
           "id": "fn-link-account",
           "params": []
+        },
+        {
+          "id": "fn-view-transaction",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-share-account",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
         }
       ]
     }

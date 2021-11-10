@@ -34,7 +34,87 @@
       "version": "11.13.0"
     }
   ],
-  "templates": [],
+  "templates": [
+    {
+      "id": "select-bank-template-1",
+      "templateName": "Select bank to link template 1",
+      "componentName": "SelectBankComponent",
+      "import": "import { SelectBankComponent } from '@banking-component/account-linking';\nimport { ThemeContext } from 'react-native-theme-component';",
+      "header": "\tconst { i18n } = useContext(ThemeContext);",
+      "body": "<SelectBankComponent Root={{ props: { i18n: i18n, }, }} BankItem={{ props: { onPressedBank: (bank) => { $fn-pressed-bank }, }, }} />",
+      "functions": [
+        {
+          "id": "fn-pressed-bank",
+          "params": [
+            {
+              "name": "bank",
+              "type": "Bank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "login-bank-template-1",
+      "templateName": "Login bank template 1",
+      "componentName": "BankLoginComponent",
+      "import": "import { AccountLinkingContext, BankLoginComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal } from 'react-native-theme-component';",
+      "header": "\tconst { bank } = route.params;\n\tconst { errorConfirmConsent, errorLoadConsent, clearBankErrors } = useContext(AccountLinkingContext);\n\tconst { linkWallet } = useContext(WalletContext);",
+      "body": "<BankLoginComponent bank={bank} onConfirmed={(consentId) => { $fn-open-select-account }} onLinked={(bankId, consentId) => { linkWallet(bankId, consentId) \n $fn-open-my-account }} />\n<ErrorModal error={getErrorDetails(errorLoadConsent)} onClose={clearBankErrors} timeOut />\n<ErrorModal error={getErrorDetails(errorConfirmConsent)} onClose={clearBankErrors} timeOut />",
+      "functions": [
+        {
+          "id": "fn-open-select-account",
+          "params": [
+            {
+              "name": "bank",
+              "type": "Bank"
+            },
+            {
+              "name": "consentId",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "fn-open-my-account",
+          "params": []
+        }
+      ]
+    },
+    {
+      "id": "confirm-consent-template-1",
+      "templateName": "Confirm consent template 1",
+      "componentName": "ConsentComponent",
+      "import": "import { ConsentComponent } from '@banking-component/account-linking';\nimport { ThemeContext } from 'react-native-theme-component';",
+      "header": "\tconst { bank } = route.params;\n\tconst { i18n } = useContext(ThemeContext);",
+      "body": "<ConsentComponent Root={{ props: { i18n: i18n, bank: bank, onContinue: () => { $fn-open-bank-login }, { bank }), }, }} />",
+      "functions": [
+        {
+          "id": "fn-open-bank-login",
+          "params": [
+            {
+              "name": "bank",
+              "type": "Bank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-account-template-1",
+      "templateName": "Select Account template 1",
+      "componentName": "LinkBankComponent",
+      "import": "import { Keyboard } from 'react-native';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { AccountLinkingContext, LinkBankComponent } from '@banking-component/account-linking';\nimport { ThemeContext, ErrorModal } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
+      "header": "\tconst { bank, consentId } = route.params;\n\tconst { i18n } = useContext(ThemeContext);\nconst { linkWallet } = useContext(WalletContext);\nconst { errorLoadAccounts, clearBankErrors } = useContext(AccountLinkingContext);\n\tuseEffect(() => {\n\t\tKeyboard.dismiss();\n\t}, [consentId]);",
+      "body": "<LinkBankComponent Root={{ props: { i18n: i18n, bank: bank, consentId: consentId, onLinkAccount: (_bankId, _consentId, _accountIds) => { linkWallet(_bankId, _consentId, _accountIds); $fn-open-my-account }, }, }} />\n<ErrorModal error={getErrorDetails(errorLoadAccounts)} onClose={clearBankErrors} timeOut />",
+      "functions": [
+        {
+          "id": "fn-open-my-account",
+          "params": []
+        }
+      ]
+    }
+  ],
   "texts": {
     "consent_component": {
       "msg_share_consent_data": "%s will share below data with us when you link your account",
