@@ -65,34 +65,13 @@
       "header": "const { link } = route.params;",
       "body": "<WebView source={{ uri: link }} />"
     },
-    {
-      "id": "consumer-data-template-1",
-      "templateName": "Consumer data template 1",
-      "componentName": "ConsumerDataComponent",
-      "import": "import { ConsumerDataComponent } from '@banking-component/account-linking';",
-      "header": "\tconst { bank } = route.params;",
-      "body": "<ConsumerDataComponent props={{ onLinkPressed: () => { $fn-link-pressed }, onCDRPolicyPressed: () => { $fn-cdr-policy-pressed }, }} />",
-      "functions": [
-        {
-          "id": "fn-link-pressed",
-          "params": [
-            {
-              "name": "bank",
-              "type": "Bank"
-            }
-          ]
-        },
-        {
-          "id": "fn-cdr-policy-pressed"
-        }
-      ]
-    },
+
     {
       "id": "link-account-template-1",
       "templateName": "Link Account template 1",
       "componentName": "LinkAccountComponent",
       "import": "import { LinkAccountComponentRefs, LinkBankStatus, ProgressStep, } from '@banking-component/account-linking/src/link-account/types';\nimport { AccountLinkingContext, LinkAccountComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';",
-      "header": " const { bank } = route.params;\nconst [step, setStep] = useState<ProgressStep>(ProgressStep.accessiblePeriod);\nconst linkAccountComponentRef = useRef<LinkAccountComponentRefs>();\nconst { isLinkingWallet, linkWallet, errorLinkWallet, isLinkedSuccessfully } = useContext(WalletContext);\nconst { errorLoadAccounts, clearBankErrors } = useContext(AccountLinkingContext);\n\nuseEffect(() => {\nif (isLinkingWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isLinking);\n}\n}, [isLinkingWallet]);\nuseEffect(() => {\nif (errorLinkWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isFailed);\n}\n}, [errorLinkWallet]);\nuseEffect(() => {\nif (isLinkedSuccessfully) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isSuccess);\n}\n}, [isLinkedSuccessfully]);",
+      "header": " const { bank } = route.params;\nconst [step, setStep] = useState<ProgressStep>(ProgressStep.accessiblePeriod);\nconst linkAccountComponentRef = useRef<LinkAccountComponentRefs>();\nconst { isLinkingWallet, linkWallet, errorLinkWallet, isLinkedSuccessfully } = useContext(WalletContext);\nconst { errorLoadAccounts, clearBankErrors } = useContext(AccountLinkingContext);\n  useEffect(() => { const unsubscribe = navigation.addListener('beforeRemove', (e) => { if (linkAccountComponentRef.current?.currentStep() !== 0) { linkAccountComponentRef.current?.goBack(); e.preventDefault(); } }); return () => { unsubscribe(); }; }, [navigation, step]);\n\nuseEffect(() => {\nif (isLinkingWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isLinking);\n}\n}, [isLinkingWallet]);\nuseEffect(() => {\nif (errorLinkWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isFailed);\n}\n}, [errorLinkWallet]);\nuseEffect(() => {\nif (isLinkedSuccessfully) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isSuccess);\n}\n}, [isLinkedSuccessfully]);",
       "body": "<LinkAccountComponent ref={linkAccountComponentRef} props={{ bank: bank, appIcon: <View />, onLinkAccount: linkWallet, onStepChanged: setStep, onGoToAccount: () => { $fn-go-to-account },  onPressedLink: (link) => { $fn-view-a-link }, }} />",
       "functions": [
         {
