@@ -172,7 +172,42 @@
     "react-native-svg": "^12.1.1",
     "react-native-tab-view": "^3.1.1"
   },
-  "templates": [],
+  "templates": [
+    {
+      "id": "invoice-list-template-1",
+      "templateName": "Invoice list template 1",
+      "componentName": "InvoiceListComponent",
+      "import": "import { InvoiceListComponent, MoneyBoxComponent } from 'invoice-component';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { useCurrencyFormat, ErrorModal} from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
+      "header": "const { summary, getDefaultWallet } = useContext(WalletContext);\nconst { allInvoices, dueInvoices, overdueInvoices, paidInvoices, errorDeleteInvoice, errorLoadShareLink, clearErrors, } = useContext(InvoiceContext);",
+      "body": " <MoneyBoxComponent label='Money I have' value={useCurrencyFormat( summary?.availableBalance ?? 0, getDefaultWallet()?.currencyCode ?? 'USD' )} style={{ containerStyle: { marginHorizontal: 10, marginVertical: 15, }, }} />\n<InvoiceListComponent onInvoiceDetail={(invoiceId) => { $fn-invoice-detail }} onSearchInvoice={() => { $fn-invoice-search }} onCreateInvoice={() => { $fn-create-invoice }} onEditInvoice={(invoiceId) => { $fn-edit-invoice }} />\n<ErrorModal error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
+      "functions": [
+        {
+          "id": "fn-invoice-detail",
+          "params": [
+            {
+              "name": "invoiceId",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "fn-invoice-search"
+        },
+        {
+          "id": "fn-create-invoice"
+        },
+        {
+          "id": "fn-edit-invoice",
+          "params": [
+            {
+              "name": "invoiceId",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "texts": {
     "invoice_list_component": {
       "lbl_all_invoices": "All invoices",
