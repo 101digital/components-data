@@ -39,9 +39,9 @@
       "id": "select-bank-template-1",
       "templateName": "Select bank to link template 1",
       "componentName": "SelectBankComponent",
-      "import": "import { SelectBankComponent } from '@banking-component/account-linking';\nimport { ThemeContext } from 'react-native-theme-component';",
-      "header": "\tconst { i18n } = useContext(ThemeContext);",
-      "body": "<SelectBankComponent Root={{ props: { i18n: i18n, }, }} BankItem={{ props: { onPressedBank: (bank) => { $fn-pressed-bank }, }, }} />",
+      "import": "import { SelectBankComponent } from '@banking-component/account-linking';",
+      "header": "",
+      "body": "<SelectBankComponent Root={{ props: { onViewGuide: () => { $fn-view-guide }, }, }} BankItem={{ props: { onPressedBank: (bank) => { $fn-pressed-bank }, }, }} />",
       "functions": [
         {
           "id": "fn-pressed-bank",
@@ -51,92 +51,119 @@
               "type": "Bank"
             }
           ]
+        },
+        {
+          "id": "fn-view-guide"
         }
       ]
     },
     {
-      "id": "login-bank-template-1",
-      "templateName": "Login bank template 1",
-      "componentName": "BankLoginComponent",
-      "import": "import { AccountLinkingContext, BankLoginComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
-      "header": "\tconst { bank } = route.params;\n\tconst { errorConfirmConsent, errorLoadConsent, clearBankErrors } = useContext(AccountLinkingContext);\n\tconst { linkWallet } = useContext(WalletContext);",
-      "body": "<BankLoginComponent bank={bank} onConfirmed={(consentId) => { $fn-open-select-account }} onLinked={(bankId, consentId) => { linkWallet(bankId, consentId) \n $fn-open-my-account }} />\n<ErrorModal error={getErrorDetails(errorLoadConsent)} onClose={clearBankErrors} timeOut />\n<ErrorModal error={getErrorDetails(errorConfirmConsent)} onClose={clearBankErrors} timeOut />",
+      "id": "dynamic-webview-template-1",
+      "templateName": "Select Account template 1",
+      "componentName": "",
+      "import": "import WebView from 'react-native-webview';",
+      "header": "const { link } = route.params;",
+      "body": "<WebView source={{ uri: link }} />"
+    },
+    {
+      "id": "consumer-data-template-1",
+      "templateName": "Consumer data template 1",
+      "componentName": "ConsumerDataComponent",
+      "import": "import { ConsumerDataComponent } from '@banking-component/account-linking';",
+      "header": "\tconst { bank } = route.params;",
+      "body": "<ConsumerDataComponent props={{ onLinkPressed: () => { $fn-link-pressed }, onCDRPolicyPressed: () => { $fn-cdr-policy-pressed }, }} />",
       "functions": [
         {
-          "id": "fn-open-select-account",
+          "id": "fn-link-pressed",
           "params": [
             {
               "name": "bank",
               "type": "Bank"
-            },
-            {
-              "name": "consentId",
-              "type": "string"
             }
           ]
         },
         {
-          "id": "fn-open-my-account",
-          "params": []
+          "id": "fn-cdr-policy-pressed"
         }
       ]
     },
     {
-      "id": "confirm-consent-template-1",
-      "templateName": "Confirm consent template 1",
-      "componentName": "ConsentComponent",
-      "import": "import { ConsentComponent } from '@banking-component/account-linking';\nimport { ThemeContext } from 'react-native-theme-component';",
-      "header": "\tconst { bank } = route.params;\n\tconst { i18n } = useContext(ThemeContext);",
-      "body": "<ConsentComponent Root={{ props: { i18n: i18n, bank: bank, onContinue: () => { $fn-open-bank-login }, }, }} />",
+      "id": "link-account-template-1",
+      "templateName": "Link Account template 1",
+      "componentName": "LinkAccountComponent",
+      "import": "import { DynamicConsent, LinkAccountComponentRefs, LinkBankStatus, ProgressStep, } from '@banking-component/account-linking/src/link-account/types';\nimport { AccountLinkingContext, LinkAccountComponent } from '@banking-component/account-linking';\nimport { WalletContext } from '@banking-component/wallet-component';",
+      "header": " const { bank } = route.params;\nconst [step, setStep] = useState<ProgressStep>(ProgressStep.accessiblePeriod);\nconst linkAccountComponentRef = useRef<LinkAccountComponentRefs>();\nconst { isLinkingWallet, linkWallet, errorLinkWallet, isLinkedSuccessfully } = useContext(WalletContext);\nconst { errorLoadAccounts, clearBankErrors } = useContext(AccountLinkingContext);\nconst { i18n } = useContext(ThemeContext);\nuseEffect(() => {\nif (isLinkingWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isLinking);\n}\n}, [isLinkingWallet]);\nuseEffect(() => {\nif (errorLinkWallet) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isFailed);\n}\n}, [errorLinkWallet]);\nuseEffect(() => {\nif (isLinkedSuccessfully) {\nlinkAccountComponentRef.current?.updateLinkBankStatus(LinkBankStatus.isSuccess);\n}\n}, [isLinkedSuccessfully]);",
+      "body": "<LinkAccountComponent ref={linkAccountComponentRef} consentSummaryComponent={{ onPressedLink: (link) => { $fn-view-a-link }, }} props={{ bank: bank, onLinkAccount: linkWallet, onStepChanged: setStep, onGoToAccount: () => { $fn-go-to-account }, }} />",
       "functions": [
         {
-          "id": "fn-open-bank-login",
+          "id": "fn-go-to-account"
+        },
+        {
+          "id": "fn-view-a-link",
           "params": [
             {
-              "name": "bank",
-              "type": "Bank"
+              "name": "link",
+              "type": "string"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "select-account-template-1",
-      "templateName": "Select Account template 1",
-      "componentName": "LinkBankComponent",
-      "import": "import { Keyboard } from 'react-native';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { AccountLinkingContext, LinkBankComponent } from '@banking-component/account-linking';\nimport { ThemeContext, ErrorModal } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
-      "header": "\tconst { bank, consentId } = route.params;\n\tconst { i18n } = useContext(ThemeContext);\nconst { linkWallet } = useContext(WalletContext);\nconst { errorLoadAccounts, clearBankErrors } = useContext(AccountLinkingContext);\n\tuseEffect(() => {\n\t\tKeyboard.dismiss();\n\t}, [consentId]);",
-      "body": "<LinkBankComponent Root={{ props: { i18n: i18n, bank: bank, consentId: consentId, onLinkAccount: (_bankId, _consentId, _accountIds) => { linkWallet(_bankId, _consentId, _accountIds); $fn-open-my-account }, }, }} />\n<ErrorModal error={getErrorDetails(errorLoadAccounts)} onClose={clearBankErrors} timeOut />",
-      "functions": [
-        {
-          "id": "fn-open-my-account",
-          "params": []
         }
       ]
     }
   ],
   "texts": {
-    "consent_component": {
-      "msg_share_consent_data": "%s will share below data with us when you link your account",
-      "btn_continue": "Continue",
-      "msg_permission_provider": "By continuing you will be redirected to your bank provider to allow access to your account",
-      "lbl_what_will_share": "What you will share",
-      "lbl_account_details": "Account details",
-      "lbl_transactions": "Transactions",
-      "lbl_account_balance": "Account balance"
+    "select_bank_component": {
+      "lbl_heading": "Please select the banking provider you are\nbanking with",
+      "plh_search_bank": "Search",
+      "lbl_how_link_account": "How to link an account?",
+      "btn_view_guide": "View here"
     },
     "link_bank_component": {
-      "lbl_heading": "Select the account to share information with\n101 Digital PTE LTD",
+      "lbl_we_using": "We are using",
+      "lbl_to_link_account": "to link your account",
+      "lbl_open_banking": "Open Banking",
+      "btn_view_cdr_policy": "View our CDR policy",
+      "btn_link": "Link",
+      "lbl_heading": "Select the account to share information with\n%s",
       "btn_continue": "Continue",
-      "lbl_access_info": "101 Digital PTE LTD will have access to the below Information",
+      "lbl_access_info": "%s will have access to the below Information",
       "lbl_account_details": "Account details",
       "lbl_transactions": "Transactions",
       "lbl_account_balance": "Account balance",
-      "msg_empty_account": "No Accounts Found"
+      "msg_empty_account": "No Accounts Found",
+      "lbl_data_accessible_period": "Data accessible period",
+      "btn_next": "Next",
+      "lbl_data_can_accessed": "Data can be accessed",
+      "lbl_consumer_data_recipient": "Accredited Consumer Data Right Recipient",
+      "lbl_recipient_id": "Accredited Data Recipient: %s",
+      "lbl_data_we_need": "Data we need",
+      "msg_select_data_to_share": "Plese select the data you like to share. We use the data to provide you a consolidated view of your money, to provide recomendation, and help you to reconcile your finances.",
+      "btn_show_full_list_data": "Show full data list",
+      "btn_consent": "I consent",
+      "lbl_need_to_connect_bank": "We need to securely connect you with your bank",
+      "msg_continue_connect_bank": "By selecting “Continue” you will be securely transfered to your bank to authorise Data Sharing.",
+      "lbl_success": "Success!",
+      "lbl_failed": "Failed!",
+      "lbl_link_bank_success": "Your %s account successfully linked.",
+      "lbl_link_bank_failed": "Your %s account linking failed.",
+      "msg_link_bank_success": "You can manage the Consent by going to Settings > Manage Data Sharing.",
+      "msg_link_bank_failed": "You can retry Account Linking by going to  Accounts > Link Account.",
+      "btn_go_to_account": "Go to Accounts"
     },
-    "select_bank_component": {
-      "lbl_heading": "Please select the banking provider you are\nbanking with",
-      "plh_search_bank": "Search"
+    "consent_manager": {
+      "lbl_active": "Active",
+      "lbl_expired": "Expired",
+      "lbl_accounts": "Accounts",
+      "lbl_additional_information": "Additional information",
+      "msg_additional_information": "%s is a accredited data recepient, you can check more details ",
+      "btn_here": "here",
+      "lbl_consumer_data_recipient": "Accredited Consumer Data Right Recipient",
+      "lbl_recipient_id": "Accredited Data Recipient: %s",
+      "lbl_data_shared": "Data you’ve shared",
+      "lbl_full_data_list": "Full data list",
+      "lbl_key_information": "Key information",
+      "lbl_consent_period_time": "The consent was given on %s1 which will expire on %s2.",
+      "lbl_sharing_period": "Sharing period: %s",
+      "btn_view_confirmation_consent": "View your confirmation of consent"
     }
   }
 }
