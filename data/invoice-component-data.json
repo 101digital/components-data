@@ -192,6 +192,7 @@
         "    paidInvoices,",
         "    errorDeleteInvoice,",
         "    errorLoadShareLink,",
+        "    errorLoadInvoiceDetail,",
         "    clearErrors,",
         "  } = useContext(InvoiceContext);"
       ],
@@ -229,7 +230,8 @@
         "      <ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
         "      <ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
         "      <ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />"
+        "      <ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -262,10 +264,17 @@
       "id": "invoice-details-template-1",
       "templateName": "Invoice details template 1",
       "componentName": "InvoiceDetailComponent",
-      "imports": ["import { InvoiceDetailComponent, Invoice } from 'invoice-component';"],
-      "headers": ["  const { invoiceId } = route.params;"],
+      "imports": [
+        "import { InvoiceDetailComponent, Invoice } from 'invoice-component';",
+        "import { ErrorModal } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
+      ],
+      "headers": [
+        "  const { invoiceId } = route.params;",
+        "  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"
+      ],
       "renders": [
-        "  <InvoiceDetailComponent",
+        "      <InvoiceDetailComponent",
         "        invoiceId={invoiceId}",
         "        invoice={route.params.invoice}",
         "        onBackPressed={() => {",
@@ -277,7 +286,8 @@
         "        onViewPayments={(invoice) => {",
         "          $fn-view-payments",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorAddPayment)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -316,11 +326,14 @@
         "  CreateInvoiceComponent,",
         "  CreateInvoiceComponentRefs,",
         "  BankAccountReference,",
-        "} from 'invoice-component';"
+        "} from 'invoice-component';",
+        "import { ErrorModal } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
       ],
       "headers": [
         "  const invoiceId = route.params?.invoiceId;",
         "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
+        "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);",
         "  const { getDefaultWallet } = useContext(WalletContext);",
         "",
         "  const getBankDetail = (): BankAccountReference | undefined => {",
@@ -357,7 +370,9 @@
         "        onUpdatedInvoice={(invoice) => {",
         "          $fn-updated-invoice",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -398,11 +413,14 @@
         "  CreateInvoiceComponent,",
         "  CreateInvoiceComponentRefs,",
         "  BankAccountReference,",
-        "} from 'invoice-component';"
+        "} from 'invoice-component';",
+        "import { ErrorModal } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
       ],
       "headers": [
         "  const invoiceId = route.params?.invoiceId;",
-        "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();"
+        "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
+        "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);"
       ],
       "renders": [
         "      <CreateInvoiceComponent",
@@ -424,7 +442,9 @@
         "        onUpdatedInvoice={(invoice) => {",
         "          $fn-updated-invoice",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -460,8 +480,12 @@
       "id": "invoice-search-template-1",
       "templateName": "Invoice search template 1",
       "componentName": "InvoiceSearchComponent",
-      "imports": ["import { InvoiceSearchComponent } from 'invoice-component';"],
-      "headers": [],
+      "imports": [
+        "import { InvoiceSearchComponent, InvoiceContext } from 'invoice-component';",
+        "import { ErrorModal } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
+      ],
+      "headers": ["  const { searchInvoices, clearErrors } = useContext(InvoiceContext);"],
       "renders": [
         "      <InvoiceSearchComponent",
         "        currencyCode='USD'",
@@ -474,7 +498,8 @@
         "        onEditInvoice={(invoiceId) => {",
         "          $fn-edit-invoice",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(searchInvoices.error)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -504,9 +529,21 @@
       "id": "invoice-payment-template-1",
       "templateName": "Invoice payment template 1",
       "componentName": "InvoicePaymentComponent",
-      "imports": ["import { InvoicePaymentComponent } from 'invoice-component';"],
-      "headers": ["  const { invoice } = route.params;"],
-      "renders": ["      <InvoicePaymentComponent", "        invoice={invoice}", "      />"]
+      "imports": [
+        "import { InvoicePaymentComponent, InvoiceContext } from 'invoice-component';",
+        "import { ErrorModal } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
+      ],
+      "headers": [
+        "  const { invoice } = route.params;",
+        "  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"
+      ],
+      "renders": [
+        "      <InvoicePaymentComponent",
+        "        invoice={invoice}",
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorUpdatePayment)} onClose={clearErrors} />"
+      ]
     }
   ],
   "texts": {
