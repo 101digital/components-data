@@ -32,35 +32,49 @@
       "id": "transaction-component-template-1",
       "templateName": "Transaction component template 1",
       "componentName": "WalletComponent",
-      "import": "import { Dimensions } from 'react-native';\nimport { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { ErrorModal, useCurrencyFormat } from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';\nconst { width } = Dimensions.get('window');",
-      "header": "\tconst initWallet = route?.params?.wallet;\n\tconst { transactionError, clearTransactionError } = useContext(TransactionContext);\n\tconst { wallets, getAggregatedWallets } = useContext(WalletContext);\n",
-      "body": "<TransactionComponent CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width, }, }} Root={{ props: { wallets: wallets, aggregatedWallets: getAggregatedWallets(), initWallet, formatCurrency: useCurrencyFormat, }, }} EmptyWallet={{ props: { onLinkAccountPressed: () => { $fn-link-account }, }, }} />\n<ErrorModal error={getErrorDetails(transactionError)} onClose={clearTransactionError} timeOut />",
+      "imports": [
+        "import { Wallet } from '@banking-component/core';",
+        "import { Dimensions } from 'react-native';",
+        "import { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';",
+        "import { WalletContext } from '@banking-component/wallet-component';",
+        "import { ErrorModal, useCurrencyFormat } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';",
+        "const { width } = Dimensions.get('window');"
+      ],
+      "headers": [
+        "  const initWallet = route?.params?.wallet;",
+        "  const { transactionError, clearTransactionError } = useContext(TransactionContext);",
+        "  const { wallets, getAggregatedWallets } = useContext(WalletContext);"
+      ],
+      "renders": [
+        "      <TransactionComponent",
+        "        CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width } }}",
+        "        Root={{",
+        "          props: {",
+        "            wallets: wallets,",
+        "            aggregatedWallets: getAggregatedWallets(),",
+        "            initWallet,",
+        "            formatCurrency: useCurrencyFormat,",
+        "          },",
+        "        }}",
+        "        EmptyWallet={{",
+        "          props: {",
+        "            onLinkAccountPressed: () => {",
+        "              $fn-link-account",
+        "            },",
+        "          },",
+        "        }}",
+        "      />",
+        "      <ErrorModal",
+        "        error={getErrorDetails(transactionError)}",
+        "        onClose={clearTransactionError}",
+        "        timeOut",
+        "      />"
+      ],
       "functions": [
-        {
-          "id": "fn-look-recommand",
-          "params": []
-        },
         {
           "id": "fn-link-account",
           "params": []
-        },
-        {
-          "id": "fn-view-transaction",
-          "params": [
-            {
-              "name": "wallet",
-              "type": "Wallet"
-            }
-          ]
-        },
-        {
-          "id": "fn-share-account",
-          "params": [
-            {
-              "name": "wallet",
-              "type": "Wallet"
-            }
-          ]
         }
       ]
     }

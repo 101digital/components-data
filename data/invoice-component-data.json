@@ -177,9 +177,60 @@
       "id": "invoice-list-template-1",
       "templateName": "Invoice list template 1",
       "componentName": "InvoiceListComponent",
-      "import": "import { InvoiceListComponent, MoneyBoxComponent } from 'invoice-component';\nimport { WalletContext } from '@banking-component/wallet-component';\nimport { useCurrencyFormat, ErrorModal} from 'react-native-theme-component';\nimport { getErrorDetails } from '@/helpers/generic-errors';",
-      "header": "const { summary, getDefaultWallet } = useContext(WalletContext);\nconst { allInvoices, dueInvoices, overdueInvoices, paidInvoices, errorDeleteInvoice, errorLoadShareLink, clearErrors, } = useContext(InvoiceContext);",
-      "body": " <MoneyBoxComponent label='Money I have' value={useCurrencyFormat( summary?.availableBalance ?? 0, getDefaultWallet()?.currencyCode ?? 'USD' )} style={{ containerStyle: { marginHorizontal: 10, marginVertical: 15, }, }} />\n<InvoiceListComponent onInvoiceDetail={(invoiceId) => { $fn-invoice-detail }} onSearchInvoice={() => { $fn-invoice-search }} onCreateInvoice={() => { $fn-create-invoice }} onEditInvoice={(invoiceId) => { $fn-edit-invoice }} />\n<ErrorModal error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />\n<ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
+      "imports": [
+        "import { InvoiceContext, InvoiceListComponent, MoneyBoxComponent } from 'invoice-component';",
+        "import { WalletContext } from '@banking-component/wallet-component';",
+        "import { ErrorModal, useCurrencyFormat } from 'react-native-theme-component';",
+        "import { getErrorDetails } from '@/helpers/generic-errors';"
+      ],
+      "headers": [
+        "  const { summary, getDefaultWallet } = useContext(WalletContext);",
+        "  const {",
+        "    allInvoices,",
+        "    dueInvoices,",
+        "    overdueInvoices,",
+        "    paidInvoices,",
+        "    errorDeleteInvoice,",
+        "    errorLoadShareLink,",
+        "    clearErrors,",
+        "  } = useContext(InvoiceContext);"
+      ],
+      "renders": [
+        "      <MoneyBoxComponent",
+        "        label='Money I have'",
+        "        value={useCurrencyFormat(",
+        "          summary?.availableBalance ?? 0,",
+        "          getDefaultWallet()?.currencyCode ?? 'USD'",
+        "        )}",
+        "        style={{",
+        "          containerStyle: {",
+        "            marginHorizontal: 10,",
+        "            marginVertical: 15,",
+        "          },",
+        "        }}",
+        "      />",
+        "      <InvoiceListComponent",
+        "        onInvoiceDetail={(invoiceId) => {",
+        "          $fn-invoice-detail",
+        "        }}",
+        "        onSearchInvoice={() => {",
+        "          $fn-invoice-search",
+        "        }}",
+        "        onCreateInvoice={() => {",
+        "          $fn-invoice-create",
+        "        }}",
+        "        onEditInvoice={(invoiceId) => {",
+        "          $fn-edit-invoice",
+        "        }",
+        "      }",
+        "      />",
+        "      <ErrorModal error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />"
+      ],
       "functions": [
         {
           "id": "fn-invoice-detail",
@@ -194,7 +245,7 @@
           "id": "fn-invoice-search"
         },
         {
-          "id": "fn-create-invoice"
+          "id": "fn-invoice-create"
         },
         {
           "id": "fn-edit-invoice",
