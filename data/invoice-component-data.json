@@ -402,13 +402,15 @@
         "  InvoiceContext,",
         "} from 'invoice-component';",
         "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { getErrorDetails } from '@/helpers/generic-errors';",
+        "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
         "  const invoiceId = route.params?.invoiceId;",
         "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
         "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);",
         "  const { getDefaultWallet } = useContext(WalletContext);",
+        "  const { profile } = useContext(AuthContext);",
         "",
         "  const getBankDetail = (): BankAccountReference | undefined => {",
         "    const defaultWallet = getDefaultWallet();",
@@ -428,7 +430,7 @@
         "        invoiceId={invoiceId}",
         "        ref={createComponentRefs}",
         "        bankAccount={getBankDetail()}",
-        "        currencyCode='USD'",
+        "        currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
         "        onGoBack={() => {",
         "          $fn-go-back",
         "        }}",
@@ -490,18 +492,20 @@
         "  InvoiceContext,",
         "} from 'invoice-component';",
         "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { getErrorDetails } from '@/helpers/generic-errors';",
+        "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
         "  const invoiceId = route.params?.invoiceId;",
         "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
-        "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);"
+        "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);",
+        "  const { profile } = useContext(AuthContext);"
       ],
       "renders": [
         "      <CreateInvoiceComponent",
         "        invoiceId={invoiceId}",
         "        ref={createComponentRefs}",
-        "        currencyCode='USD'",
+        "        currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
         "        onGoBack={() => {",
         "          $fn-go-back",
         "        }}",
@@ -558,12 +562,16 @@
       "imports": [
         "import { InvoiceSearchComponent, InvoiceContext } from 'invoice-component';",
         "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { getErrorDetails } from '@/helpers/generic-errors';",
+        "import { AuthContext } from 'react-native-auth-component';"
       ],
-      "headers": ["  const { searchInvoices, clearErrors } = useContext(InvoiceContext);"],
+      "headers": [
+        "  const { searchInvoices, clearErrors } = useContext(InvoiceContext);",
+        "  const { profile } = useContext(AuthContext);"
+      ],
       "renders": [
         "      <InvoiceSearchComponent",
-        "        currencyCode='USD'",
+        "        currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
         "        onBackPressed={() => {",
         "          $fn-go-back",
         "        }}",

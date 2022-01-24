@@ -104,7 +104,7 @@
       ],
       "headers": [
         "  const [showCountryPicker, setShowCountryPicker] = useState(false);",
-        "  const { deviceCountryCode, i18n } = useContext(ThemeContext);",
+        "  const { deviceCountryCode } = useContext(ThemeContext);",
         "  const loginRefs = useRef<LoginComponentRef>();",
         "",
         "  useEffect(() => {",
@@ -118,7 +118,6 @@
         "        ref={loginRefs}",
         "        Root={{",
         "          props: {",
-        "            i18n: i18n,",
         "            onLoginSuccess: (profile) => {",
         "              $fn-login-success",
         "            },",
@@ -186,9 +185,14 @@
       "id": "logout-template",
       "templateName": "Simple logout template",
       "componentName": "LoginComponent",
-      "import": "import { AuthContext } from 'react-native-auth-component';\nimport { Button } from 'react-native-theme-component';",
-      "header": "\n\tconst { logout } = useContext(AuthContext);",
-      "body": "<Button label='LOGOUT' style={{ primaryContainerStyle: { margin: 20, }, }} onPress={logout} />"
+      "imports": [
+        "import { AuthContext } from 'react-native-auth-component';",
+        "import { Button } from 'react-native-theme-component';"
+      ],
+      "headers": ["  const { logout } = useContext(AuthContext);"],
+      "renders": [
+        "<Button label='LOGOUT' style={{ primaryContainerStyle: { margin: 20, }, }} onPress={logout} />"
+      ]
     }
   ],
   "texts": {
