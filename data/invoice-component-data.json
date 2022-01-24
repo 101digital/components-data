@@ -399,6 +399,7 @@
         "  CreateInvoiceComponent,",
         "  CreateInvoiceComponentRefs,",
         "  BankAccountReference,",
+        "  InvoiceContext,",
         "} from 'invoice-component';",
         "import { ErrorModal } from 'react-native-theme-component';",
         "import { getErrorDetails } from '@/helpers/generic-errors';"
