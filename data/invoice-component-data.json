@@ -269,7 +269,7 @@
         "        invoiceId={invoiceId}",
         "        invoice={route.params.invoice}",
         "        onBackPressed={() => {",
-        "          $fn-on-back",
+        "          $fn-go-back",
         "        }}",
         "        onViewAttachments={() => {",
         "          $fn-view-attachments",
@@ -281,7 +281,7 @@
       ],
       "functions": [
         {
-          "id": "fn-on-back"
+          "id": "fn-go-back"
         },
         {
           "id": "fn-view-attachments"
