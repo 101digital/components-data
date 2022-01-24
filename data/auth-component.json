@@ -99,7 +99,6 @@
       "templateName": "Login with phone number template",
       "componentName": "LoginComponent",
       "imports": [
-        "import { LoginScreenProps } from '@/navigation/auth-navigator';",
         "import { LoginComponent, LoginComponentRef } from 'react-native-auth-component';",
         "import { CountryPicker, ThemeContext } from 'react-native-theme-component';"
       ],

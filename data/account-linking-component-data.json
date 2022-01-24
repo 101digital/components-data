@@ -95,7 +95,6 @@
       "templateName": "Link Account template 1",
       "componentName": "LinkAccountComponent",
       "imports": [
-        "import { Bank } from '@banking-component/core';",
         "import {",
         "  LinkAccountComponentRefs,",
         "  LinkBankStatus,",

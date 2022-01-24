@@ -33,7 +33,6 @@
       "templateName": "Transaction component template 1",
       "componentName": "WalletComponent",
       "imports": [
-        "import { Wallet } from '@banking-component/core';",
         "import { Dimensions } from 'react-native';",
         "import { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';",
         "import { WalletContext } from '@banking-component/wallet-component';",
