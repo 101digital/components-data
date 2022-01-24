@@ -257,6 +257,256 @@
           ]
         }
       ]
+    },
+    {
+      "id": "invoice-details-template-1",
+      "templateName": "Invoice details template 1",
+      "componentName": "InvoiceDetailComponent",
+      "imports": ["import { InvoiceDetailComponent, Invoice } from 'invoice-component';"],
+      "headers": ["  const { invoiceId } = route.params;"],
+      "renders": [
+        "  <InvoiceDetailComponent",
+        "        invoiceId={invoiceId}",
+        "        invoice={route.params.invoice}",
+        "        onBackPressed={() => {",
+        "          $fn-on-back",
+        "        }}",
+        "        onViewAttachments={() => {",
+        "          $fn-view-attachments",
+        "        }}",
+        "        onViewPayments={(invoice) => {",
+        "          $fn-view-payments",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-on-back"
+        },
+        {
+          "id": "fn-view-attachments"
+        },
+        {
+          "id": "fn-view-payments",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoice-attachment-template-1",
+      "templateName": "Invoice attachment template 1",
+      "componentName": "InvoiceAttachmentComponent",
+      "imports": ["import { InvoiceAttachmentComponent } from 'invoice-component';"],
+      "headers": ["  const { editable } = route.params;"],
+      "renders": ["      <InvoiceAttachmentComponent editable={editable} />"],
+      "functions": []
+    },
+    {
+      "id": "invoice-create-template-1",
+      "templateName": "Invoice create template 1",
+      "componentName": "CreateInvoiceComponent",
+      "imports": [
+        "import { WalletContext } from '@banking-component/wallet-component';",
+        "import {",
+        "  CreateInvoiceComponent,",
+        "  CreateInvoiceComponentRefs,",
+        "  BankAccountReference,",
+        "} from 'invoice-component';"
+      ],
+      "headers": [
+        "  const invoiceId = route.params?.invoiceId;",
+        "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
+        "  const { getDefaultWallet } = useContext(WalletContext);",
+        "",
+        "  const getBankDetail = (): BankAccountReference | undefined => {",
+        "    const defaultWallet = getDefaultWallet();",
+        "    if (defaultWallet) {",
+        "      return {",
+        "        bankId: defaultWallet.bankAccount.bankCode,",
+        "        sortCode: defaultWallet.bankAccount.bankBranchId ?? '',",
+        "        accountNumber: defaultWallet.bankAccount.accountNumber,",
+        "        accountName: defaultWallet.bankAccount.accountHolderName,",
+        "      };",
+        "    }",
+        "    return undefined;",
+        "  };"
+      ],
+      "renders": [
+        "      <CreateInvoiceComponent",
+        "        invoiceId={invoiceId}",
+        "        ref={createComponentRefs}",
+        "        bankAccount={getBankDetail()}",
+        "        currencyCode='USD'",
+        "        onGoBack={() => {",
+        "          $fn-go-back",
+        "        }}",
+        "        onSearchCustomer={() => {",
+        "          $fn-search-customer",
+        "        }}",
+        "        onAttachDocument={() => {",
+        "          $fn-attach-document",
+        "        }}",
+        "        onCreatedInvoice={(invoice) => {",
+        "          $fn-created-invoice",
+        "        }}",
+        "        onUpdatedInvoice={(invoice) => {",
+        "          $fn-updated-invoice",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-go-back"
+        },
+        {
+          "id": "fn-search-customer"
+        },
+        {
+          "id": "fn-attach-document"
+        },
+        {
+          "id": "fn-created-invoice",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        },
+        {
+          "id": "fn-updated-invoice",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoice-create-template-2",
+      "templateName": "Invoice create template 2",
+      "componentName": "CreateInvoiceComponent",
+      "imports": [
+        "import {",
+        "  CreateInvoiceComponent,",
+        "  CreateInvoiceComponentRefs,",
+        "  BankAccountReference,",
+        "} from 'invoice-component';"
+      ],
+      "headers": [
+        "  const invoiceId = route.params?.invoiceId;",
+        "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();"
+      ],
+      "renders": [
+        "      <CreateInvoiceComponent",
+        "        invoiceId={invoiceId}",
+        "        ref={createComponentRefs}",
+        "        currencyCode='USD'",
+        "        onGoBack={() => {",
+        "          $fn-go-back",
+        "        }}",
+        "        onSearchCustomer={() => {",
+        "          $fn-search-customer",
+        "        }}",
+        "        onAttachDocument={() => {",
+        "          $fn-attach-document",
+        "        }}",
+        "        onCreatedInvoice={(invoice) => {",
+        "          $fn-created-invoice",
+        "        }}",
+        "        onUpdatedInvoice={(invoice) => {",
+        "          $fn-updated-invoice",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-go-back"
+        },
+        {
+          "id": "fn-search-customer"
+        },
+        {
+          "id": "fn-attach-document"
+        },
+        {
+          "id": "fn-created-invoice",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        },
+        {
+          "id": "fn-updated-invoice",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoice-search-template-1",
+      "templateName": "Invoice search template 1",
+      "componentName": "InvoiceSearchComponent",
+      "imports": ["import { InvoiceSearchComponent } from 'invoice-component';"],
+      "headers": [],
+      "renders": [
+        "      <InvoiceSearchComponent",
+        "        currencyCode='USD'",
+        "        onBackPressed={() => {",
+        "          $fn-go-back",
+        "        }}",
+        "        onInvoiceDetail={(invoiceId) => {",
+        "          $fn-invoice-detail",
+        "        }}",
+        "        onEditInvoice={(invoiceId) => {",
+        "          $fn-edit-invoice",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-go-back"
+        },
+        {
+          "id": "fn-invoice-detail",
+          "params": [
+            {
+              "name": "invoiceId",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "fn-edit-invoice",
+          "params": [
+            {
+              "name": "invoiceId",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoice-payment-template-1",
+      "templateName": "Invoice payment template 1",
+      "componentName": "InvoicePaymentComponent",
+      "imports": ["import { InvoicePaymentComponent } from 'invoice-component';"],
+      "headers": ["  const { invoice } = route.params;"],
+      "renders": ["      <InvoicePaymentComponent", "        invoice={invoice}", "      />"]
     }
   ],
   "texts": {
