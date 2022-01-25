@@ -342,13 +342,10 @@
         "import { ErrorModal } from 'react-native-theme-component';",
         "import { getErrorDetails } from '@/helpers/generic-errors';"
       ],
-      "headers": [
-        "  const { invoiceId } = route.params;",
-        "  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"
-      ],
+      "headers": ["  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"],
       "renders": [
         "      <InvoiceDetailComponent",
-        "        invoiceId={invoiceId}",
+        "        invoiceId={route.params.invoiceId}",
         "        invoice={route.params.invoice}",
         "        onBackPressed={() => {",
         "          $fn-go-back",
@@ -385,8 +382,8 @@
       "templateName": "Invoice attachment template 1",
       "componentName": "InvoiceAttachmentComponent",
       "imports": ["import { InvoiceAttachmentComponent } from 'invoice-component';"],
-      "headers": ["  const { editable } = route.params;"],
-      "renders": ["      <InvoiceAttachmentComponent editable={editable} />"],
+      "headers": [],
+      "renders": ["      <InvoiceAttachmentComponent editable={route.params.editable} />"],
       "functions": []
     },
     {
@@ -406,7 +403,6 @@
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
-        "  const invoiceId = route.params?.invoiceId;",
         "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
         "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);",
         "  const { getDefaultWallet } = useContext(WalletContext);",
@@ -427,7 +423,7 @@
       ],
       "renders": [
         "      <CreateInvoiceComponent",
-        "        invoiceId={invoiceId}",
+        "        invoiceId={route.params?.invoiceId}",
         "        ref={createComponentRefs}",
         "        bankAccount={getBankDetail()}",
         "        currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
@@ -496,14 +492,13 @@
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
-        "  const invoiceId = route.params?.invoiceId;",
         "  const createComponentRefs = useRef<CreateInvoiceComponentRefs>();",
         "  const { errorCreateInvoice, errorUpdateInvoice, clearErrors } = useContext(InvoiceContext);",
         "  const { profile } = useContext(AuthContext);"
       ],
       "renders": [
         "      <CreateInvoiceComponent",
-        "        invoiceId={invoiceId}",
+        "        invoiceId={route.params?.invoiceId}",
         "        ref={createComponentRefs}",
         "        currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
         "        onGoBack={() => {",
@@ -617,13 +612,10 @@
         "import { ErrorModal } from 'react-native-theme-component';",
         "import { getErrorDetails } from '@/helpers/generic-errors';"
       ],
-      "headers": [
-        "  const { invoice } = route.params;",
-        "  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"
-      ],
+      "headers": ["  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"],
       "renders": [
         "      <InvoicePaymentComponent",
-        "        invoice={invoice}",
+        "        invoice={route.params.invoice}",
         "      />",
         "      <ErrorModal error={getErrorDetails(errorUpdatePayment)} onClose={clearErrors} />"
       ]

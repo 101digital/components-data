@@ -25,7 +25,195 @@
     }
   },
   "dependencies": [],
-  "templates": [],
+  "templates": [
+    {
+      "id": "customer-list-template-1",
+      "templateName": "Select customer from customer list",
+      "componentName": "CustomerListComponent",
+      "imports": [
+        "import { CustomerListComponent, CustomerReference, Customer } from 'customer-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "      <CustomerListComponent",
+        "        onAddCustomer={() => {",
+        "          if (route.params?.onSelectedCustomer) {",
+        "            $fn-add-customer",
+        "          }",
+        "        }}",
+        "        onCustomerDetail={(customer) => {",
+        "          if (route.params?.onSelectedCustomer) {",
+        "            $fn-selected-customer",
+        "          }",
+        "        }}",
+        "        onEditCustomer={(customer) => {}}",
+        "        CustomerItem={{",
+        "          props: { editable: false },",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-add-customer"
+        },
+        {
+          "id": "fn-selected-customer",
+          "params": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "customer-list-template-2",
+      "templateName": "Show customer list with full action",
+      "componentName": "CustomerListComponent",
+      "imports": [
+        "import { CustomerListComponent, CustomerReference, Customer } from 'customer-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "      <CustomerListComponent",
+        "        onAddCustomer={() => {",
+        "          $fn-add-customer",
+        "        }}",
+        "        onCustomerDetail={(customer) => {",
+        "          $fn-customer-detail",
+        "        }}",
+        "        onEditCustomer={(customer) => {",
+        "          $fn-edit-customer",
+        "        }}",
+        "        CustomerItem={{",
+        "          props: { editable: true },",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-add-customer"
+        },
+        {
+          "id": "fn-customer-detail",
+          "params": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        },
+        {
+          "id": "fn-edit-customer",
+          "params": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "customer-detail-template-1",
+      "templateName": "Show customer details information",
+      "componentName": "CustomerDetailComponent",
+      "imports": [
+        "import { CustomerDetailComponent, Invoice } from 'customer-component';",
+        "import { AuthContext } from 'react-native-auth-component';"
+      ],
+      "headers": ["  const { profile } = useContext(AuthContext);"],
+      "renders": [
+        "        <CustomerDetailComponent",
+        "          tabIndex={route.params?.tabIndex ?? 0}",
+        "          customer={route.params?.customer}",
+        "          onEditCustomer={() => {",
+        "            $fn-edit-customer",
+        "          }}",
+        "          onDeletedCustomer={() => {",
+        "            $fn-deleted-customer",
+        "          }",
+        "          currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
+        "          onInvoiceActions={(invoice) => {",
+        "            $fn-invoice-actions",
+        "          }}",
+        "          onInvoiceDetails={(invoice) =>",
+        "            $fn-invoice-detail",
+        "          }",
+        "        />"
+      ],
+      "functions": [
+        {
+          "id": "fn-edit-customer"
+        },
+        {
+          "id": "fn-deleted-customer"
+        },
+        {
+          "id": "fn-invoice-actions",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        },
+        {
+          "id": "fn-invoice-detail",
+          "params": [
+            {
+              "name": "invoice",
+              "type": "Invoice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "add-customer-template-1",
+      "templateName": "Add customer component template",
+      "componentName": "AddCustomerComponent",
+      "imports": ["import { AddCustomerComponent, CustomerReference } from 'customer-component';"],
+      "headers": [
+        "",
+        "const toDetails = (customer: CustomerReference) => {",
+        "    if (route.params?.onCreatedCustomer) {",
+        "      $fn-created-customer",
+        "      return;",
+        "    }",
+        "    $fn-customer-detail",
+        "};"
+      ],
+      "renders": [
+        "      <AddCustomerComponent",
+        "        customer={route.params?.customer}",
+        "        onCreatedCustomer={toDetails}",
+        "        onUpdatedCustomer={toDetails}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-created-customer",
+          "params": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        },
+        {
+          "id": "fn-customer-detail",
+          "params": [
+            {
+              "name": "customer",
+              "type": "Customer"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "texts": {
     "customer_component": {
       "plh_search": "Search",
