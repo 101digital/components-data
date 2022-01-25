@@ -622,7 +622,7 @@
     },
     {
       "id": "invoice-actions-template-1",
-      "templateName": "This template handle to show invoice action bottom sheet in customer detail screen",
+      "templateName": "This template handle to show invoice action bottom sheet in customer detail screen. The customer component is required with this template",
       "componentName": "InvoiceActionSheetComponent",
       "imports": [
         "import {",
@@ -631,6 +631,7 @@
         "  showChaseInvoice,",
         "  showShareInvoice,",
         "} from 'invoice-component';",
+        "import { CustomerContext } from 'customer-component'",
         "import { ThemeContext, formatCurrency, AlertModal } from 'react-native-theme-component';"
       ],
       "headers": [
