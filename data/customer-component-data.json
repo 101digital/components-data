@@ -30,9 +30,7 @@
       "id": "customer-list-template-1",
       "templateName": "Select customer from customer list",
       "componentName": "CustomerListComponent",
-      "imports": [
-        "import { CustomerListComponent, CustomerReference, Customer } from 'customer-component';"
-      ],
+      "imports": ["import { CustomerListComponent, CustomerReference } from 'customer-component';"],
       "headers": [],
       "renders": [
         "      <CustomerListComponent",
@@ -71,9 +69,7 @@
       "id": "customer-list-template-2",
       "templateName": "Show customer list with full action",
       "componentName": "CustomerListComponent",
-      "imports": [
-        "import { CustomerListComponent, CustomerReference, Customer } from 'customer-component';"
-      ],
+      "imports": ["import { CustomerListComponent, CustomerReference } from 'customer-component';"],
       "headers": [],
       "renders": [
         "      <CustomerListComponent",
@@ -120,7 +116,7 @@
       "templateName": "Show customer details information",
       "componentName": "CustomerDetailComponent",
       "imports": [
-        "import { CustomerDetailComponent, CustomerReference Invoice } from 'customer-component';",
+        "import { CustomerDetailComponent, CustomerReference, Invoice } from 'customer-component';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": ["  const { profile } = useContext(AuthContext);"],
@@ -175,21 +171,24 @@
       "templateName": "Add customer component template",
       "componentName": "AddCustomerComponent",
       "imports": ["import { AddCustomerComponent, CustomerReference } from 'customer-component';"],
-      "headers": [
-        "",
-        "const toDetails = (customer: CustomerReference) => {",
-        "    if (route.params?.onCreatedCustomer) {",
-        "      $fn-created-customer",
-        "      return;",
-        "    }",
-        "    $fn-customer-detail",
-        "};"
-      ],
+      "headers": [],
       "renders": [
         "      <AddCustomerComponent",
         "        customer={route.params?.customer}",
-        "        onCreatedCustomer={toDetails}",
-        "        onUpdatedCustomer={toDetails}",
+        "        onCreatedCustomer={(customer) => {",
+        "          if (route.params?.onCreatedCustomer) {",
+        "            $fn-created-customer",
+        "            return;",
+        "          }",
+        "          $fn-customer-detail",
+        "        }}",
+        "        onUpdatedCustomer={(customer) => {",
+        "          if (route.params?.onCreatedCustomer) {",
+        "            $fn-created-customer",
+        "            return;",
+        "          }",
+        "          $fn-customer-detail",
+        "        }}",
         "      />"
       ],
       "functions": [
