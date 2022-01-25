@@ -120,7 +120,7 @@
       "templateName": "Show customer details information",
       "componentName": "CustomerDetailComponent",
       "imports": [
-        "import { CustomerDetailComponent, Invoice } from 'customer-component';",
+        "import { CustomerDetailComponent, CustomerReference Invoice } from 'customer-component';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": ["  const { profile } = useContext(AuthContext);"],
@@ -133,14 +133,14 @@
         "          }}",
         "          onDeletedCustomer={() => {",
         "            $fn-deleted-customer",
-        "          }",
+        "          }}",
         "          currencyCode={profile?.country?.attributes.currencyInfo.listCurrency[0].code ?? 'USD'}",
         "          onInvoiceActions={(invoice) => {",
         "            $fn-invoice-actions",
         "          }}",
-        "          onInvoiceDetails={(invoice) =>",
+        "          onInvoiceDetails={(invoice) => {",
         "            $fn-invoice-detail",
-        "          }",
+        "          }}",
         "        />"
       ],
       "functions": [
