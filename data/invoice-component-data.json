@@ -270,7 +270,6 @@
         "import { getErrorDetails } from '@/helpers/generic-errors';"
       ],
       "headers": [
-        "  const { summary, getDefaultWallet } = useContext(WalletContext);",
         "  const {",
         "    allInvoices,",
         "    dueInvoices,",
