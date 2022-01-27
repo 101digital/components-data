@@ -99,9 +99,7 @@
         "  ProgressStep,",
         "} from '@banking-component/account-linking/src/link-account/types';",
         "import { AccountLinkingContext, LinkAccountComponent } from '@banking-component/account-linking';",
-        "import { WalletContext } from '@banking-component/wallet-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { WalletContext } from '@banking-component/wallet-component';"
       ],
       "headers": [
         "  const { bank } = route.params;",
