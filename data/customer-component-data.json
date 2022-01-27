@@ -30,8 +30,12 @@
       "id": "customer-list-template-1",
       "templateName": "Select customer from customer list",
       "componentName": "CustomerListComponent",
-      "imports": ["import { CustomerListComponent, CustomerReference } from 'customer-component';"],
-      "headers": [],
+      "imports": [
+        "import { CustomerListComponent, CustomerReference, CustomerContext } from 'customer-component';"
+      ],
+      "headers": [
+        "  const { errorCreateCustomer, errorUpdateCustomer, clearErrors } = useContext(CustomerContext);"
+      ],
       "renders": [
         "      <CustomerListComponent",
         "        onAddCustomer={() => {",
@@ -48,7 +52,9 @@
         "        CustomerItem={{",
         "          props: { editable: false },",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorCreateCustomer)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorUpdateCustomer)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -69,8 +75,12 @@
       "id": "customer-list-template-2",
       "templateName": "Show customer list with full action",
       "componentName": "CustomerListComponent",
-      "imports": ["import { CustomerListComponent, CustomerReference } from 'customer-component';"],
-      "headers": [],
+      "imports": [
+        "import { CustomerListComponent, CustomerReference, CustomerContext } from 'customer-component';"
+      ],
+      "headers": [
+        "  const { errorCreateCustomer, errorUpdateCustomer, clearErrors } = useContext(CustomerContext);"
+      ],
       "renders": [
         "      <CustomerListComponent",
         "        onAddCustomer={() => {",
@@ -85,7 +95,9 @@
         "        CustomerItem={{",
         "          props: { editable: true },",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorCreateCustomer)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorUpdateCustomer)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -116,10 +128,14 @@
       "templateName": "Show customer details information",
       "componentName": "CustomerDetailComponent",
       "imports": [
-        "import { CustomerDetailComponent, CustomerReference, Invoice } from 'customer-component';",
+        "import { CustomerDetailComponent, CustomerReference, Invoice, CustomerContext } from 'customer-component';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
-      "headers": ["  const { profile } = useContext(AuthContext);"],
+      "headers": [
+        "  const { profile } = useContext(AuthContext);",
+        "  const { errorLoadCustomerDetail, errorLoadCustomerSummary } = useContext( CustomerContext);",
+        "  const clearCustomerErrors = useContext(CustomerContext).clearErrors;"
+      ],
       "renders": [
         "        <CustomerDetailComponent",
         "          tabIndex={route.params?.tabIndex ?? 0}",
@@ -137,7 +153,9 @@
         "          onInvoiceDetails={(invoice) => {",
         "            $fn-invoice-detail",
         "          }}",
-        "        />"
+        "        />",
+        "      <ErrorModal error={getErrorDetails(errorLoadCustomerDetail)} onClose={clearCustomerErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorLoadCustomerSummary)} onClose={clearCustomerErrors} />"
       ],
       "functions": [
         {
@@ -170,8 +188,12 @@
       "id": "add-customer-template-1",
       "templateName": "Add customer component template",
       "componentName": "AddCustomerComponent",
-      "imports": ["import { AddCustomerComponent, CustomerReference } from 'customer-component';"],
-      "headers": [],
+      "imports": [
+        "import { AddCustomerComponent, CustomerReference, CustomerContext } from 'customer-component';"
+      ],
+      "headers": [
+        "  const { errorCreateCustomer, errorUpdateCustomer, clearErrors } = useContext(CustomerContext);"
+      ],
       "renders": [
         "      <AddCustomerComponent",
         "        customer={route.params?.customer}",
@@ -189,7 +211,9 @@
         "          }",
         "          $fn-customer-detail",
         "        }}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorCreateCustomer)} onClose={clearErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorUpdateCustomer)} onClose={clearErrors} />"
       ],
       "functions": [
         {

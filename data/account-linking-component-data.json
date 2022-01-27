@@ -40,9 +40,7 @@
       "templateName": "Select bank to link template 1",
       "componentName": "SelectBankComponent",
       "imports": [
-        "import { AccountLinkingContext, SelectBankComponent } from '@banking-component/account-linking';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';",
-        "import { ErrorModal } from 'react-native-theme-component';"
+        "import { AccountLinkingContext, SelectBankComponent } from '@banking-component/account-linking';"
       ],
       "headers": [
         "  const { errorLoadBanks, clearBankErrors } = useContext(AccountLinkingContext);"

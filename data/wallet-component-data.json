@@ -38,10 +38,9 @@
       "imports": [
         "import { WalletComponent, WalletComponentRefs, WalletContext } from '@banking-component/wallet-component';",
         "import { AccountLinkingContext } from '@banking-component/account-linking';",
-        "import { ErrorModal, ThemeContext, useCurrencyFormat } from 'react-native-theme-component';",
+        "import { ThemeContext, useCurrencyFormat } from 'react-native-theme-component';",
         "import { CompasionRequestParams, ProductContext, RecommandBannerComponent } from 'product-comparison-component';",
-        "import { isEmpty } from '@banking-component/core';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { isEmpty } from '@banking-component/core';"
       ],
       "headers": [
         "const accountRef = useRef<WalletComponentRefs>();",

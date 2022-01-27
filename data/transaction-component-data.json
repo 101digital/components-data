@@ -36,8 +36,7 @@
         "import { Dimensions } from 'react-native';",
         "import { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';",
         "import { WalletContext } from '@banking-component/wallet-component';",
-        "import { ErrorModal, useCurrencyFormat } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';",
+        "import { useCurrencyFormat } from 'react-native-theme-component';",
         "const { width } = Dimensions.get('window');"
       ],
       "headers": [

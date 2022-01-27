@@ -180,8 +180,7 @@
       "imports": [
         "import { InvoiceContext, InvoiceListComponent, MoneyBoxComponent } from 'invoice-component';",
         "import { WalletContext } from '@banking-component/wallet-component';",
-        "import { ErrorModal, useCurrencyFormat } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { useCurrencyFormat } from 'react-native-theme-component';"
       ],
       "headers": [
         "  const { summary, getDefaultWallet } = useContext(WalletContext);",
@@ -225,13 +224,13 @@
         "        }",
         "      }",
         "      />",
-        "      <ErrorModal error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -264,11 +263,7 @@
       "id": "invoice-list-template-2",
       "templateName": "Invoice list template 2",
       "componentName": "InvoiceListComponent",
-      "imports": [
-        "import { InvoiceContext, InvoiceListComponent } from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
-      ],
+      "imports": ["import { InvoiceContext, InvoiceListComponent } from 'invoice-component';"],
       "headers": [
         "  const {",
         "    allInvoices,",
@@ -297,13 +292,13 @@
         "        }",
         "      }",
         "      />",
-        "      <ErrorModal error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(allInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(dueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(overdueInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(paidInvoices?.error)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorDeleteInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorLoadShareLink)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -337,9 +332,7 @@
       "templateName": "Invoice details template 1",
       "componentName": "InvoiceDetailComponent",
       "imports": [
-        "import { InvoiceDetailComponent, Invoice, InvoiceContext } from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
+        "import { InvoiceDetailComponent, Invoice, InvoiceContext } from 'invoice-component';"
       ],
       "headers": ["  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"],
       "renders": [
@@ -356,7 +349,7 @@
         "          $fn-view-payments",
         "        }}",
         "      />",
-        "      <ErrorModal error={getErrorDetails(errorAddPayment)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorAddPayment)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -397,8 +390,6 @@
         "  BankAccountReference,",
         "  InvoiceContext,",
         "} from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
@@ -442,8 +433,8 @@
         "          $fn-updated-invoice",
         "        }}",
         "      />",
-        "      <ErrorModal error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -486,8 +477,6 @@
         "  BankAccountReference,",
         "  InvoiceContext,",
         "} from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
@@ -516,8 +505,8 @@
         "          $fn-updated-invoice",
         "        }}",
         "      />",
-        "      <ErrorModal error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
-        "      <ErrorModal error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorCreateInvoice)} onClose={clearErrors} />",
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorUpdateInvoice)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -555,8 +544,6 @@
       "componentName": "InvoiceSearchComponent",
       "imports": [
         "import { InvoiceSearchComponent, InvoiceContext } from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';",
         "import { AuthContext } from 'react-native-auth-component';"
       ],
       "headers": [
@@ -576,7 +563,7 @@
         "          $fn-edit-invoice",
         "        }}",
         "      />",
-        "      <ErrorModal error={getErrorDetails(searchInvoices.error)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(searchInvoices.error)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -606,17 +593,13 @@
       "id": "invoice-payment-template-1",
       "templateName": "Invoice payment template 1",
       "componentName": "InvoicePaymentComponent",
-      "imports": [
-        "import { InvoicePaymentComponent, InvoiceContext } from 'invoice-component';",
-        "import { ErrorModal } from 'react-native-theme-component';",
-        "import { getErrorDetails } from '@/helpers/generic-errors';"
-      ],
+      "imports": ["import { InvoicePaymentComponent, InvoiceContext } from 'invoice-component';"],
       "headers": ["  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"],
       "renders": [
         "      <InvoicePaymentComponent",
         "        invoice={route.params.invoice}",
         "      />",
-        "      <ErrorModal error={getErrorDetails(errorUpdatePayment)} onClose={clearErrors} />"
+        "      <ErrorModal isShowClose={false} error={getErrorDetails(errorUpdatePayment)} onClose={clearErrors} />"
       ]
     },
     {
@@ -630,7 +613,6 @@
         "  showChaseInvoice,",
         "  showShareInvoice,",
         "} from 'invoice-component';",
-        "import { CustomerContext } from 'customer-component'",
         "import { ThemeContext, formatCurrency, AlertModal } from 'react-native-theme-component';"
       ],
       "headers": [
@@ -646,8 +628,11 @@
         "    isUpdatedPaymentSuccess,",
         "    isDeletedInvoiceSuccess,",
         "    deleteInvoice,",
+        "    errorDeleteInvoice,",
+        "    errorLoadInvoiceDetail,",
         "  } = useContext(InvoiceContext);",
         "  const { i18n, currencies } = useContext(ThemeContext);",
+        "  const clearInvoiceErrors = useContext(InvoiceContext).clearErrors;",
         "",
         "  useEffect(() => {",
         "    if (shareLink && shareLink.showFrom === 'customer-detail-component') {",
@@ -751,7 +736,9 @@
         "        }}",
         "        timeOut",
         "        timeLimit={500}",
-        "      />"
+        "      />",
+        "      <ErrorModal error={getErrorDetails(errorDeleteInvoice)} onClose={clearInvoiceErrors} />",
+        "      <ErrorModal error={getErrorDetails(errorLoadInvoiceDetail)} onClose={clearInvoiceErrors} />"
       ],
       "functions": [
         {
