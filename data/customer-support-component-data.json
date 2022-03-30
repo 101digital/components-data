@@ -24,7 +24,7 @@
       "id": "help-button-template",
       "templateName": "Button to start customer support",
       "componentName": "StartCustomerSupportButton",
-      "imports": ["import { Button } from 'react-native-theme-component';"],
+      "imports": [],
       "headers": [],
       "renders": [
         "      <Button label='Help' style={{ primaryContainerStyle: { margin: 20 } }} onPress={() => { $fn-help }} />"

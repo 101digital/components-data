@@ -27,7 +27,7 @@
       "id": "send-money-ud-ud-template",
       "templateName": "Button to send Money from UD to UD",
       "componentName": "SendMoneyFromUDToUD",
-      "imports": ["import { Button } from 'react-native-theme-component';"],
+      "imports": [],
       "headers": [],
       "renders": [
         "      <Button label='Send Money' style={{ primaryContainerStyle: { margin: 20 } }} onPress={() => { $fn-send-money }} />"
