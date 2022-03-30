@@ -24,7 +24,7 @@
   "dependencies": [],
   "templates": [
     {
-      "id": "select-ud-account-component",
+      "id": "select-ud-account-component-template",
       "templateName": "Select UD account component",
       "componentName": "SelectUDAccountComponent",
       "imports": ["import { SelectUDAccountComponent } from 'transfer-component';"],
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "new-recipient-component",
+      "id": "new-recipient-component-template",
       "templateName": "New recipient component",
       "componentName": "NewRecipientComponent",
       "imports": [
@@ -76,7 +76,7 @@
         "            $fn-on-next",
         "          }}",
         "        />",
-        "        <ErrorModal isShowClose={false} error={getErrorDetails(errorSearchRecipient?.error)} onClose={clearErrors} />"
+        "        <ErrorModal isShowClose={false} error={getErrorDetails(errorSearchRecipient)} onClose={clearErrors} />"
       ],
       "functions": [
         {
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": "transfer-component",
+      "id": "transfer-component-template",
       "templateName": "Transfer component",
       "componentName": "TransferComponent",
       "imports": [
@@ -162,7 +162,9 @@
         "        isFromContact={isFromContact}",
         "        userAccountId={userAccId ?? ''}",
         "        maxAmount={100000}",
-        "        onDone={() => { $fn-on-done }}",
+        "        onDone={() => {",
+        "           $fn-on-done",
+        "        }}",
         "        onChangedStep={setStep}",
         "        onChangedStatus={setStatus}",
         "        currencyCode={'PHP'}",
