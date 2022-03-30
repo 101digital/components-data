@@ -7,6 +7,7 @@ const productComparionData = require('./data/product-comparison-component.json')
 const customerComponentData = require('./data/customer-component-data.json');
 const invoiceComponentData = require('./data/invoice-component-data.json')
 const transferComponentData = require('./data/transfer-component-data.json')
+const customerSupportComponentData = require('./data/customer-support-component-data.json');
 
 exports.getDataByComponentId = (id) => {
   switch (id) {
@@ -28,6 +29,8 @@ exports.getDataByComponentId = (id) => {
       return invoiceComponentData;
     case 'transfer-component':
       return transferComponentData;
+    case 'customer-support-component':
+      return customerSupportComponentData
     default:
       break;
   }
