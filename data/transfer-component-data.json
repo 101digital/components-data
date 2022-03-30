@@ -172,7 +172,7 @@
       ],
       "functions": [
         {
-          "id": "$fn-on-done",
+          "id": "fn-on-done",
           "params": []
         }
       ]
