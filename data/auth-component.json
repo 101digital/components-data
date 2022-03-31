@@ -9,21 +9,33 @@
         "clientSecret": "vCRObVDOb_vlEctFor8X6LFWArca",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
-        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT"
+        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT",
+        "authGrantType": "password",
+        "authScope": "openid",
+        "appGrantType": "client_credentials",
+        "appScope": "PRODUCTION"
       },
       "staging": {
         "clientId": "gltBKX0Xvbt5HTRPTPdcuicabRUa",
         "clientSecret": "vCRObVDOb_vlEctFor8X6LFWArca",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
-        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT"
+        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT",
+        "authGrantType": "password",
+        "authScope": "openid",
+        "appGrantType": "client_credentials",
+        "appScope": "PRODUCTION"
       },
       "production": {
         "clientId": "vpqOwqOIY3l7gD4nzuEPgKgQ5Sca",
         "clientSecret": "VfLff9SrxAwlJMW_TwzkFgnrSm8a",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://api.101digital.io/token",
-        "membershipBaseUrl": "https://api.101digital.io/membership-service/v1.0"
+        "membershipBaseUrl": "https://api.101digital.io/membership-service/v1.0",
+        "authGrantType": "password",
+        "authScope": "openid",
+        "appGrantType": "client_credentials",
+        "appScope": "PRODUCTION"
       }
     }
   },
