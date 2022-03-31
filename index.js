@@ -9,6 +9,7 @@ const invoiceComponentData = require("./data/invoice-component-data.json");
 const transferComponentData = require("./data/transfer-component-data.json");
 const customerSupportComponentData = require("./data/customer-support-component-data.json");
 const customerInvokeComponentData = require("./data/customer-invoke-component-data.json");
+const accountOriginationComponentData = require("./data/account-origination-component-data.json");
 
 exports.getDataByComponentId = id => {
   switch (id) {
@@ -34,6 +35,8 @@ exports.getDataByComponentId = id => {
       return customerSupportComponentData;
     case "customer-invoke-component":
       return customerInvokeComponentData;
+    case "account-origination-component":
+      return accountOriginationComponentData;
     default:
       break;
   }
