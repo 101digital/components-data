@@ -167,11 +167,11 @@
         "        eBank={eBank}",
         "        isFromContact={isFromContact}",
         "        userAccountId={userAccId ?? ''}",
-        "        onDone={() => $fn-on-done }",
+        "        onDone={() => { $fn-on-done } }",
         "        onChangedStep={setStep}",
         "        onChangedStatus={setStatus}",
         "        currencyCode={'PHP'}",
-        "        onCancel={() => $fn-on-cancel }",
+        "        onCancel={() => { $fn-on-cancel } }",
         "      />"
       ],
       "functions": [
