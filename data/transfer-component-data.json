@@ -188,11 +188,11 @@
     {
       "id": "choose-transfer-method-component-template",
       "templateName": "Choose transfer method component template",
-      "componentName": "ChooseTransferMethodComponent",
-      "imports": ["import { ChooseTransferMethodComponent } from 'transfer-component';"],
+      "componentName": "TransferMethodComponent",
+      "imports": ["import { TransferMethodComponent } from 'transfer-component';"],
       "headers": [],
       "renders": [
-        "      <ChooseTransferMethodComponent",
+        "      <TransferMethodComponent",
         "        onPressed={(method) => {",
         "          if (method.LocalInstrument === 'UD_TO_UD') {",
         "            $fn-ud-transfer",
