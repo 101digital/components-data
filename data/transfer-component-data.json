@@ -171,7 +171,6 @@
         "        onChangedStep={setStep}",
         "        onChangedStatus={setStatus}",
         "        currencyCode={'PHP'}",
-        "        companyIcon={<Image source={images.raiffeisen} style={styles.unionImageStyle} />}",
         "        onCancel={() => $fn-on-cancel }",
         "      />"
       ],
