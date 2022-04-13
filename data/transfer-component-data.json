@@ -162,7 +162,6 @@
         "        onDone={() => navigation.popToTop()}",
         "        onChangedStep={setStep}",
         "        onChangedStatus={setStatus}",
-        "        companyIcon={<Image source={images.raiffeisen} style={styles.unionImageStyle} />}",
         "        onCancel={() => navigation.goBack()}",
         "      />"
       ],
