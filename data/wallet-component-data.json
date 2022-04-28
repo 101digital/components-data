@@ -40,7 +40,7 @@
         "import { AccountLinkingContext } from '@banking-component/account-linking';",
         "import { ThemeContext, useCurrencyFormat } from 'react-native-theme-component';",
         "import { CompasionRequestParams, ProductContext, RecommandBannerComponent } from 'product-comparison-component';",
-        "import { isEmpty } from 'lodash"
+        "import { isEmpty } from 'lodash';"
       ],
       "headers": [
         "const accountRef = useRef<WalletListComponentRefs>();",
@@ -241,7 +241,7 @@
         "import { Dimensions } from 'react-native';",
         "import { AuthContext } from 'react-native-auth-component';",
         "import { WalletCardComponent, WalletContext } from '@banking-component/wallet-component';",
-        "import { isEmpty } from 'lodash",
+        "import { isEmpty } from 'lodash';",
         "const { width } = Dimensions.get('window');"
       ],
       "headers": [
