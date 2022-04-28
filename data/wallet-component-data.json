@@ -399,7 +399,14 @@
       "btn_send_money": "Send Money",
       "lbl_recent_transactions": "Recent transactions",
       "btn_view_all": "View all",
-      "msg_no_transaction": "You have no transactions yet."
+      "msg_no_transaction": "You have no transactions yet.",
+      "lbl_account_details": "UnionDigital Account Details",
+      "btn_close": "Close",
+      "lbl_account_name": "Account Name",
+      "lbl_account_number": "Account Number",
+      "lbl_mobile_number": "Mobile Number",
+      "lbl_current_balance": "Current Balance",
+      "msg_copied": "Text has been copied to your clipboard."
     },
     "share_information_component": {
       "lbl_recipient_email": "Recipient Email",
