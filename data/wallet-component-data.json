@@ -197,7 +197,7 @@
       "componentName": "WalletListComponent",
       "imports": [
         "import { Dimensions } from 'react-native';",
-        "import { TransactionListComponent, WalletContext } from '@banking-component/wallet-component';",
+        "import { TransactionListComponent, WalletContext, Wallet } from '@banking-component/wallet-component';",
         "const { width } = Dimensions.get('window');"
       ],
       "headers": [
