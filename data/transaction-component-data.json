@@ -1,0 +1,91 @@
+{
+  "id": "transaction-component",
+  "name": "Transaction Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/101digital/react-native-banking-components.git",
+    "directory": "packages/transaction-component"
+  },
+  "config": {
+    "env": {
+      "development": {
+        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0"
+      },
+      "staging": {
+        "walletBaseUrl": "https://sandbox.101digital.io/wallet-service/1.0.0"
+      },
+      "production": {
+        "walletBaseUrl": "https://api.101digital.io/wallet-service/v1.0"
+      }
+    }
+  },
+  "dependencies": [
+    {
+      "name": "https://github.com/101digital/react-native-theme-component.git"
+    },
+    {
+      "name": "https://gitpkg.now.sh/101digital/react-native-banking-components/packages/core"
+    }
+  ],
+  "templates": [
+    {
+      "id": "transaction-component-template-1",
+      "templateName": "Transaction component template 1",
+      "componentName": "WalletComponent",
+      "imports": [
+        "import { Dimensions } from 'react-native';",
+        "import { TransactionComponent, TransactionContext } from '@banking-component/transaction-component';",
+        "import { WalletContext } from '@banking-component/wallet-component';",
+        "import { useCurrencyFormat } from 'react-native-theme-component';",
+        "const { width } = Dimensions.get('window');"
+      ],
+      "headers": [
+        "  const initWallet = route?.params?.wallet;",
+        "  const { transactionError, clearTransactionError } = useContext(TransactionContext);",
+        "  const { wallets, getAggregatedWallets } = useContext(WalletContext);"
+      ],
+      "renders": [
+        "      <TransactionComponent",
+        "        CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width } }}",
+        "        Root={{",
+        "          props: {",
+        "            wallets: wallets,",
+        "            aggregatedWallets: getAggregatedWallets(),",
+        "            initWallet,",
+        "            formatCurrency: useCurrencyFormat,",
+        "          },",
+        "        }}",
+        "        EmptyWallet={{",
+        "          props: {",
+        "            onLinkAccountPressed: () => {",
+        "              $fn-link-account",
+        "            },",
+        "          },",
+        "        }}",
+        "      />",
+        "      <ErrorModal",
+        "        error={getErrorDetails(transactionError)}",
+        "        onClose={clearTransactionError}",
+        "        timeOut",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-link-account",
+          "params": []
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "transaction_component": {
+      "msg_no_transaction": "No Transactions Found",
+      "lbl_primary": "Primary",
+      "lbl_summary": "Summary",
+      "lbl_money_in": "Money In",
+      "lbl_money_out": "Money Out",
+      "msg_no_wallet": "No Bank Account Linked",
+      "btn_link_bank_account": "Link Bank Account"
+    }
+  }
+}

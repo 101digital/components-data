@@ -1,0 +1,154 @@
+{
+  "id": "account-origination-component",
+  "name": "Account Origination Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/101digital/account-origination-component.git"
+  },
+  "config": {
+    "env": {
+      "development": {
+        "accountOriginationBaseUrl": "https://api-ud-ow-dev.101digital.io/membership-service/1.0.13"
+      },
+      "staging": {
+        "accountOriginationBaseUrl": "https://api-ud-ow-dev.101digital.io/membership-service/1.0.13"
+      },
+      "production": {
+        "accountOriginationBaseUrl": "https://api-ud-ow-dev.101digital.io/membership-service/1.0.13"
+      }
+    }
+  },
+  "dependencies": [],
+  "templates": [
+    {
+      "id": "help-button-template",
+      "templateName": "Button to start customer invoke",
+      "componentName": "StartAccountOriginationButton",
+      "imports": [],
+      "headers": [],
+      "renders": [
+        "      <Button label='Help' style={{ primaryContainerStyle: { margin: 20 } }} onPress={() => { $fn-help }} />"
+      ],
+      "functions": [
+        {
+          "id": "fn-help",
+          "params": []
+        }
+      ]
+    },
+    {
+      "id": "account-origination-template-ud",
+      "templateName": "Account Origination Template for UD",
+      "componentName": "AccountOriginationComponent",
+      "imports": [
+        "import { AccountOriginationComponent,defaultAccountOriginationSteps } from 'account-origination-component';",
+        "import { AuthContext } from 'react-native-auth-component';"
+      ],
+      "headers": ["  const { profile } = useContext(AuthContext);"],
+      "renders": [
+        "      <AccountOriginationComponent",
+        "        initData={{",
+        "          firstName: `${profile?.firstName ?? ''} ?? ''}`,",
+        "          lastName: `${profile?.lastName ?? ''}`,",
+        "        }}",
+        "        onBack={() => navigation.goBack()}",
+        "        onCompleted={(applicationDetails) => {",
+        "          console.log('applicationDetails', applicationDetails);",
+        "        }}",
+        "        initStep={defaultAccountOriginationSteps[0]}",
+        "      />"
+      ]
+    },
+    {
+      "id": "account-origination-template-101Pay",
+      "templateName": "Account Origination Template for 101Pay",
+      "componentName": "AccountOriginationComponent",
+      "imports": [
+        "import { AccountOriginationComponent,defaultAccountOriginationSteps } from 'account-origination-component';",
+        "import { AuthContext } from 'react-native-auth-component';"
+      ],
+      "headers": ["  const { profile } = useContext(AuthContext);"],
+      "renders": [
+        "      <AccountOriginationComponent",
+        "        initData={{",
+        "          firstName: `${profile?.firstName ?? ''} ?? ''}`,",
+        "          lastName: `${profile?.lastName ?? ''}`,",
+        "        }}",
+        "        onBack={() => navigation.goBack()}",
+        "        onCompleted={(applicationDetails) => {",
+        "          console.log('applicationDetails', applicationDetails);",
+        "        }}",
+        "        initStep={defaultAccountOriginationSteps[0]}",
+        "      />"
+      ]
+    },
+    {
+      "id": "edd-component-template",
+      "templateName": "EDD Component template",
+      "componentName": "EDDComponent",
+      "imports": ["import { EDDComponent } from 'account-origination-component';"],
+      "headers": ["  const { applicationId } = route.params;"],
+      "renders": [
+        "      <EDDComponent",
+        "        onBack={() => {",
+        "          $fn-on-back",
+        "        }}",
+        "        applicationId={applicationId}",
+        "        onNext={() => {",
+        "          $fn-on-next",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-on-back",
+          "params": []
+        },
+        {
+          "id": "fn-on-next",
+          "params": []
+        }
+      ]
+    }
+  ],
+  "texts": [
+    {
+      "edd_component": {
+        "lbl_summary_header": "Before we continue",
+        "lbl_summary_subheader": "For us to futher verify your identity, we will be needing you to provide additional documents and answer some questions.\n\nBy continuing, you allow UnionDigital to use the provided information for all of your transactions.\n\nShould you need to drop off, you can relogin to your account and continue your application where you dropped off. ",
+        "btn_consent": "I consent",
+        "lbl_add_document_header": "Additional Information",
+        "lbl_add_document_subheader": "Please provide supporting information for the source of fund or wealth",
+        "btn_save_continue": "Save & Continue",
+        "lbl_add_attachment": "Add Attachment",
+        "msg_attachment": "Upload a file in .jpg, .png, or .pdf format. Max of 5MB",
+        "lbl_select_document_type": "Select document type",
+        "btn_select": "Select",
+        "btn_attach_file_photo": "Attach a file or photo",
+        "plh_select_document_type": "Select document type",
+        "plh_enter_other_details": "Enter details for others",
+        "msg_error_connect": "We're having difficulty trying to connecting to our server. Please try again.",
+        "msg_file_too_large": "File size is too large. %s was not uploaded. Files cannot be larger than 5mb.",
+        "lbl_add_bank_header": "Additional Information",
+        "lbl_add_bank_subheader": "Please list the banks where you have maintained or maintaining an account.",
+        "lbl_select_bank_header": "List of banks",
+        "lbl_select_bank_subheader": "Select a bank.",
+        "plh_search_bank": "Search for a bank",
+        "msg_no_result": "No results found.",
+        "phl_select_ebank": "Select e bank",
+        "btn_add_a_bank": "Add a bank",
+        "lbl_add_company_header": "Additional Information",
+        "lbl_add_company_subheader": "Please list the companies where  you are a stockholder, director, officer, or authorized signatory. For multiple companies, please separate them by comma.\n\nIf you're not affiliated with any companies, just indicate 'Not Applicable'.",
+        "lbl_company_names": "Company names",
+        "phl_enter_company_names": "Enter company names",
+        "lbl_ongoing_verification": "Ongoing account\nverification",
+        "msg_ongoing_verification": "Thank you for submitting your\ninformation. We will process your\nrequest and notify you within 24 hours.",
+        "btn_next": "Next",
+        "lbl_storage_permission_required": "Need storage permission",
+        "msg_storage_permission_required": "The app needs permission in order to access your files. Please adjust this in your settings.",
+        "btn_open_settings": "Go to Settings",
+        "btn_cancel": "Cancel"
+      }
+    }
+  ]
+}
