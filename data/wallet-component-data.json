@@ -312,6 +312,92 @@
       ]
     },
     {
+      "id": "wallets-card-component-template-2",
+      "templateName": "Wallet Card component template 2",
+      "componentName": "WalletCardComponent",
+      "imports": [
+        "import { Dimensions } from 'react-native';",
+        "import { AuthContext } from 'react-native-auth-component';",
+        "import { WalletCardComponent, WalletContext } from '@banking-component/wallet-component';",
+        "import { statusBarHeight } from 'react-native-theme-component/src/utils/device-utils';",
+        "import { isEmpty } from 'lodash';",
+        "const { width } = Dimensions.get('window');"
+      ],
+      "headers": [
+        "  const { profile } = useContext(AuthContext);",
+        "  const { getWallets, wallets } = useContext(WalletContext);",
+        "",
+        "  useEffect(() => {",
+        "    if (isEmpty(wallets)) {",
+        "      getWallets();",
+        "    }",
+        "  }, []);"
+      ],
+      "renders": [
+        "        <WalletCardComponent",
+        "          phoneNumber={profile?.mobileNumber ?? ''}",
+        "          carouselItemWidth={width - 50}",
+        "          onAddMoney={(wallet) => {",
+        "            $fn-add-money",
+        "          }}",
+        "          onSendMoney={(wallet) => {",
+        "            $fn-send-money",
+        "          }}",
+        "          onViewAllTransactions={(wallet) => {",
+        "            $fn-view-all-transactions",
+        "          }}",
+        "          onTransactionDetails={(transaction) => {",
+        "            $fn-transaction-details",
+        "          }}",
+        "          style={{",
+        "            containerStyle: {",
+        "              position: 'absolute',",
+        "              top: 127 + statusBarHeight,",
+        "              zIndex: 1,",
+        "            },",
+        "          }}",
+        "        />"
+      ],
+      "functions": [
+        {
+          "id": "fn-add-money",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-send-money",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-view-all-transactions",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-transaction-details",
+          "params": [
+            {
+              "name": "transaction",
+              "type": "Transaction"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "recent-transaction-component-template",
       "templateName": "Recent transaction component template",
       "componentName": "RecentTransactionComponent",
