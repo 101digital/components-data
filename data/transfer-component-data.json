@@ -41,10 +41,10 @@
       "componentName": "SendMoneyFromUDToUD",
       "imports": ["import { WalletContext } from '@banking-component/wallet-component';"],
       "headers": [
-        "  const { fetchWallets } = useContext(WalletContext);",
+        "  const { getWallets } = useContext(WalletContext);",
         "",
         "  useEffect(() => {",
-        "    fetchWallets();",
+        "    getWallets();",
         "  }, []);",
         ""
       ],
