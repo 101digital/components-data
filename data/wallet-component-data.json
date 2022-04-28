@@ -194,7 +194,7 @@
     {
       "id": "transaction-list-component-template-1",
       "templateName": "Transaction List component template 1",
-      "componentName": "WalletListComponent",
+      "componentName": "TransactionListComponent",
       "imports": [
         "import { Dimensions } from 'react-native';",
         "import { TransactionListComponent, WalletContext, Wallet } from '@banking-component/wallet-component';",
