@@ -18,7 +18,7 @@
       },
       "production": {
         "walletBaseUrl": "https://api.101digital.io/wallet-service/v1.0",
-        "financialBaseUrl": "https://api.101digital.io/financial-profile-service/1.0.0"
+        "financialBaseUrl": "https://sandbox.101digital.io/financial-profile-service/1.0.0"
       }
     }
   },
@@ -32,20 +32,20 @@
   ],
   "templates": [
     {
-      "id": "wallet-component-template-1",
-      "templateName": "Wallet component template 1",
-      "componentName": "WalletComponent",
+      "id": "wallet-list-component-template-1",
+      "templateName": "Wallet List component template 1",
+      "componentName": "WalletListComponent",
       "imports": [
-        "import { WalletComponent, WalletComponentRefs, WalletContext } from '@banking-component/wallet-component';",
+        "import { WalletListComponent, WalletListComponentRefs, WalletContext } from '@banking-component/wallet-component';",
         "import { AccountLinkingContext } from '@banking-component/account-linking';",
         "import { ThemeContext, useCurrencyFormat } from 'react-native-theme-component';",
         "import { CompasionRequestParams, ProductContext, RecommandBannerComponent } from 'product-comparison-component';",
-        "import { isEmpty } from '@banking-component/core';"
+        "import { isEmpty } from 'lodash"
       ],
       "headers": [
-        "const accountRef = useRef<WalletComponentRefs>();",
+        "const accountRef = useRef<WalletListComponentRefs>();",
         "  const {",
-        "    fetchWallets,",
+        "    getWallets,",
         "    wallets,",
         "    errorUnlinkWallet,",
         "    errorUpdatePrimary,",
@@ -59,7 +59,7 @@
         "",
         "  useEffect(() => {",
         "    if (isEmpty(wallets)) {",
-        "      fetchWallets();",
+        "      getWallets();",
         "    }",
         "    if (isEmpty(banks)) {",
         "      getBanks();",
@@ -94,9 +94,9 @@
         "  }, [comparisons.length]);"
       ],
       "renders": [
-        "      <WalletComponent",
+        "      <WalletListComponent",
         "        ref={accountRef}",
-        "        Root={{ props: { formatCurrency: useCurrencyFormat, bankImages: bankImages } }}",
+        "        Root={{ props: { bankImages: bankImages } }}",
         "        Balance={{",
         "          style: {",
         "            containerStyle: { backgroundColor: colors.primaryColor },",
@@ -190,10 +190,176 @@
           ]
         }
       ]
+    },
+    {
+      "id": "transaction-list-component-template-1",
+      "templateName": "Transaction List component template 1",
+      "componentName": "WalletListComponent",
+      "imports": [
+        "import { Dimensions } from 'react-native';",
+        "import { TransactionListComponent, WalletContext } from '@banking-component/wallet-component';",
+        "const { width } = Dimensions.get('window');"
+      ],
+      "headers": [
+        "  const initWallet = route?.params?.wallet;",
+        "  const { transactionError, clearTransactionError } = useContext(WalletContext);"
+      ],
+      "renders": [
+        "      <TransactionListComponent",
+        "        CarouselItem={{ props: { carouselItemWidth: width - 32, carouselWidth: width } }}",
+        "        Root={{",
+        "          props: {",
+        "            initWallet,",
+        "          },",
+        "        }}",
+        "        EmptyWallet={{",
+        "          props: {",
+        "            onLinkAccountPressed: () => {",
+        "              $fn-link-account",
+        "            },",
+        "          },",
+        "        }}",
+        "      />",
+        "      <ErrorModal",
+        "        error={getErrorDetails(transactionError)}",
+        "        onClose={clearTransactionError}",
+        "        timeOut",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-link-account",
+          "params": []
+        }
+      ]
+    },
+    {
+      "id": "wallets-card-component-template-1",
+      "templateName": "Wallet Card component template 1",
+      "componentName": "WalletCardComponent",
+      "imports": [
+        "import { Dimensions } from 'react-native';",
+        "import { AuthContext } from 'react-native-auth-component';",
+        "import { WalletCardComponent, WalletContext } from '@banking-component/wallet-component';",
+        "import { isEmpty } from 'lodash",
+        "const { width } = Dimensions.get('window');"
+      ],
+      "headers": [
+        "  const { profile } = useContext(AuthContext);",
+        "  const { getWallets, wallets } = useContext(WalletContext);",
+        "",
+        "  useEffect(() => {",
+        "    if (isEmpty(wallets)) {",
+        "      getWallets();",
+        "    }",
+        "  }, []);"
+      ],
+      "renders": [
+        "        <WalletCardComponent",
+        "          phoneNumber={profile?.mobileNumber ?? ''}",
+        "          carouselItemWidth={width - 50}",
+        "          onAddMoney={(wallet) => {",
+        "            $fn-add-money",
+        "          }}",
+        "          onSendMoney={(wallet) => {",
+        "            $fn-send-money",
+        "          }}",
+        "          onViewAllTransactions={(wallet) => {",
+        "            $fn-view-all-transactions",
+        "          }}",
+        "        />"
+      ],
+      "functions": [
+        {
+          "id": "fn-add-money",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-send-money",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        },
+        {
+          "id": "fn-view-all-transactions",
+          "params": [
+            {
+              "name": "wallet",
+              "type": "Wallet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recent-transaction-component-template",
+      "templateName": "Recent transaction component template",
+      "componentName": "RecentTransactionComponent",
+      "imports": [
+        "import { RecentTransactionComponent, WalletContext, Wallet } from '@banking-component/wallet-component';"
+      ],
+      "headers": ["  const { wallet } = route.params;"],
+      "renders": [
+        "      <RecentTransactionComponent",
+        "        onAddMoney={() => {",
+        "          $fn-add-money",
+        "        }}",
+        "        wallet={wallet}",
+        "        onTransactionDetails={(transaction) => {",
+        "          $fn-transaction-detail",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-add-money",
+          "params": []
+        },
+        {
+          "id": "fn-transaction-detail",
+          "params": [
+            {
+              "name": "transaction",
+              "type": "Transaction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transaction-details-component-template",
+      "templateName": "Transaction details component template",
+      "componentName": "TransactionDetailsComponent",
+      "imports": [
+        "import { Transaction, TransactionDetailsComponent  } from '@banking-component/wallet-component';"
+      ],
+      "headers": ["  const { transaction } = route.params;"],
+      "renders": [
+        "      <TransactionDetailsComponent",
+        "        transaction={transaction}",
+        "        onBack={() => {",
+        "          $fn-on-back",
+        "        }}",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-on-back",
+          "params": []
+        }
+      ]
     }
   ],
   "texts": {
-    "wallet_component": {
+    "wallets_list_component": {
       "lbl_link_successfully": "Account Added Succefully",
       "msg_link_successfully": "Your bank account is successfully linked to your profile.",
       "btn_continue": "Continue",
@@ -215,6 +381,13 @@
       "msg_cashflow": "View cashflow chart for your money in & money out to analyse your spending.",
       "btn_view": "View",
       "btn_share_information": "Share Information"
+    },
+    "wallet_card_component": {
+      "btn_add_money": "Add Money",
+      "btn_send_money": "Send Money",
+      "lbl_recent_transactions": "Recent transactions",
+      "btn_view_all": "View all",
+      "msg_no_transaction": "You have no transactions yet."
     },
     "share_information_component": {
       "lbl_recipient_email": "Recipient Email",
@@ -240,6 +413,41 @@
       "msg_shared_successfully": "Account Information are sent successfully",
       "lbl_unable_share": "Unable to share",
       "msg_share_failed": "An error occured while trying to share your transaction details. Please try again."
+    },
+    "transaction_list_component": {
+      "msg_no_transaction": "No transactions found",
+      "lbl_primary": "Primary",
+      "lbl_summary": "Summary",
+      "lbl_money_in": "Money in",
+      "lbl_money_out": "Money out",
+      "msg_no_wallet": "No bank account linked",
+      "btn_link_bank_account": "Link bank account"
+    },
+    "recent_transaction_component": {
+      "lbl_transaction": "Transactions",
+      "btn_load_more": "Load more",
+      "lbl_no_transactions": "You have no transactions yet.",
+      "msg_no_transactions": "Try adding money to your %s and enjoy the rest of the UnionDigital features.",
+      "btn_add_money_now": "Add money now",
+      "lbl_error_transactions": "Something went wrong",
+      "msg_error_transactions": "We're having difficulty trying to connect to our server. Please try again.",
+      "btn_swipe_refresh": "Swipe down to refresh",
+      "btn_save_gallery": "Save to gallery",
+      "btn_share": "Share",
+      "lbl_type_transaction": "Type of transaction",
+      "lbl_transaction_details": "Transaction Details",
+      "lbl_send_money_from": "Send money from",
+      "lbl_send_money_to": "Send money to",
+      "lbl_received_from": "Received from",
+      "lbl_note_to_recipient": "Note to recipient",
+      "lbl_purpose_transfer": "Purpose of transfer",
+      "lbl_send_via": "Send via",
+      "lbl_when": "When",
+      "lbl_amount": "Amount",
+      "lbl_transaction_fee": "Transaction Fee",
+      "lbl_total_amount": "Total amount",
+      "lbl_transaction_date": "Transaction Date / Time",
+      "lbl_reference_no": "Reference No."
     }
   }
 }
