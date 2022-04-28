@@ -112,8 +112,6 @@
     },
     "address-detail": {
       "lbl_country": "Country",
-      "plh_country": "Country",
-      "lbl_country": "Region",
       "plh_country": "Region",
       "lbl_province": "Province",
       "plh_province": "Province",
