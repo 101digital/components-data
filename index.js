@@ -38,7 +38,7 @@ exports.getDataByComponentId = id => {
       return customerInvokeComponentData;
     case "account-origination-component":
       return accountOriginationComponentData;
-    case "account-origination-component":
+    case "react-native-register-component":
       return registerComponentData;
     default:
       break;
