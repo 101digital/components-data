@@ -298,6 +298,29 @@
         "        }}",
         "      />"
       ],
+      "pageStyle": [
+        "const styles = StyleSheet.create({",
+        "  container: {",
+        "    flex: 1,",
+        "    backgroundColor: '#F1F6FC',",
+        "  },",
+        "  footer: {",
+        "    flex: 1,",
+        "    alignItems: 'center',",
+        "  },",
+        "  footerText: {",
+        "    fontSize: 10,",
+        "    color: '#7F7B82',",
+        "    lineHeight: 20,",
+        "  },",
+        "  backButtonContainerStyle: {",
+        "    padding: 15,",
+        "    marginLeft: 12,",
+        "    width: 100,",
+        "    backgroundColor: '#F1F6FC',",
+        "  },",
+        "});"
+      ],
       "functions": [
         {
           "id": "fn-login-success",
