@@ -37,10 +37,29 @@
         "<InviteCodeQuestionScreen",
         "  onPress={(data) => {",
         "    if (data.withCode) {",
-        "      //navigation.navigate(Route.INVITATION_CODE_SCREEN, {});",
+        "      navigation.navigate(Route.INVITATION_CODE_SCREEN, {});",
         "    } else {",
         "     // navigation.navigate(Route.JOIN_LIST_SCREEN, {});",
         "    }",
+        "  }}",
+        "  onPressBack={() => {",
+        "    navigation.goBack();",
+        "  }}",
+        "/>"
+      ]
+    },
+    {
+      "id": "register-invitation-template",
+      "templateName": "Simple register invitation template",
+      "componentName": "InviteCodeValidationScreen",
+      "imports": [
+        "import { InviteCodeValidationScreen } from 'react-native-register-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "<InviteCodeValidationScreen",
+        "  onPress={(code: string) => {",
+        "    //navigation.navigate(Route.TERMS_CONDITION_SCREEN, { data: code });",
         "  }}",
         "  onPressBack={() => {",
         "    navigation.goBack();",
