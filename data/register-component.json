@@ -37,7 +37,7 @@
         "<InviteCodeQuestionScreen",
         "  onPress={(data) => {",
         "    if (data.withCode) {",
-        "      navigation.navigate(Route.INVITATION_CODE_SCREEN, {});",
+        "      $fn-invitation-code",
         "    } else {",
         "     // navigation.navigate(Route.JOIN_LIST_SCREEN, {});",
         "    }",
@@ -46,6 +46,12 @@
         "    navigation.goBack();",
         "  }}",
         "/>"
+      ],
+      "functions": [
+        {
+          "id": "fn-invitation-code",
+          "params": []
+        }
       ]
     },
     {
