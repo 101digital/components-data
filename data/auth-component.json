@@ -388,7 +388,6 @@
         "          style: {",
         "             logoContainerStyle: {",
         "                 alignSelf: 'flex-start',",
-        "                 marginTop: -40,",
         "             },",
         "             containerStyle: {",
         "                 flex: 1,",

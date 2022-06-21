@@ -39,7 +39,7 @@
         "    if (data.withCode) {",
         "      $fn-invitation-code",
         "    } else {",
-        "     // navigation.navigate(Route.JOIN_LIST_SCREEN, {});",
+        "      $fn-join-list",
         "    }",
         "  }}",
         "  onPressBack={() => {",
@@ -50,6 +50,10 @@
       "functions": [
         {
           "id": "fn-invitation-code",
+          "params": []
+        },
+        {
+          "id": "fn-join-list",
           "params": []
         }
       ]

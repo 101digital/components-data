@@ -58,6 +58,40 @@
       ]
     },
     {
+      "id": "customer-support-template-ud-2",
+      "templateName": "Customer Support Template for UD",
+      "componentName": "CustomerSupportComponent",
+      "imports": [
+        "import { TouchableOpacity } from 'react-native';",
+        "import { CustomerSupportComponent } from 'customer-support-component';",
+        "import { BackIcon } from 'react-native-auth-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "<>",
+        " <TouchableOpacity",
+        "   activeOpacity={0.8}",
+        "   onPress={() => {",
+        "     navigation.goBack();",
+        "   }}",
+        "   style={{padding: 15,marginLeft: 12,marginBottom: 8,width: 100,}}",
+        " >",
+        "   {<BackIcon width={17} height={12} />}",
+        " </TouchableOpacity>",
+        " <CustomerSupportComponent",
+        "    params={{",
+        "     app: 'ud',",
+        "     platform: 'mobile',",
+        "     screen: 'JOIN_WAITLIST',",
+        "     hiddenFields: ['name', 'supportTopic', 'supportGroup', 'message', 'attachments'],",
+        "      groupId: 'MY_ACCOUNT',",
+        "      issueId: 'CANNOT_REGISTER',",
+        "    }}",
+        " />",
+        "</>"
+      ]
+    },
+    {
       "id": "customer-support-template-101Pay",
       "templateName": "Customer Support Template for 101Pay",
       "componentName": "CustomerSupportComponent",
