@@ -39,7 +39,9 @@
       "id": "send-money-ud-ud-template",
       "templateName": "Button to send Money from UD to UD",
       "componentName": "SendMoneyFromUDToUD",
-      "imports": ["import { WalletContext } from '@banking-component/wallet-component';"],
+      "imports": [
+        "import { WalletContext } from '@banking-component/wallet-component';"
+      ],
       "headers": [
         "  const { getWallets } = useContext(WalletContext);",
         "",
@@ -62,7 +64,9 @@
       "id": "select-ud-account-component-template",
       "templateName": "Select UD account component template",
       "componentName": "SelectUDAccountComponent",
-      "imports": ["import { SelectUDAccountComponent } from 'transfer-component';"],
+      "imports": [
+        "import { SelectUDAccountComponent } from 'transfer-component';"
+      ],
       "renders": [
         "      <SelectUDAccountComponent",
         "        onNewRecipient={() => {",
@@ -187,7 +191,9 @@
       "id": "choose-transfer-method-component-template",
       "templateName": "Choose transfer method component template",
       "componentName": "TransferMethodComponent",
-      "imports": ["import { TransferMethodComponent } from 'transfer-component';"],
+      "imports": [
+        "import { TransferMethodComponent } from 'transfer-component';"
+      ],
       "headers": [],
       "renders": [
         "      <TransferMethodComponent",
@@ -254,7 +260,8 @@
       "plh_select_purpose_transfer": "Select a purpose",
       "plh_enter_purpose_transfer": "Enter purpose of transfer",
       "btn_next": "Next",
-      "btn_select": "Select"
+      "btn_select": "Select",
+      "lbl_header_title": "Send now to"
     },
     "input_amount_component": {
       "lbl_header_title": "Enter amount to send",
