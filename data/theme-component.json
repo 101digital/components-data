@@ -3,7 +3,10 @@
   "name": "ThemeComponent",
   "repository": "https://github.com/101digital/react-native-theme-component",
   "dependencies": [
-    { "name": "@react-native-async-storage/async-storage", "version": "^1.15.5" },
+    {
+      "name": "@react-native-async-storage/async-storage",
+      "version": "^1.15.5"
+    },
     { "name": "react-native-localize", "version": "^2.1.1" },
     { "name": "react-native-svg", "version": "^12.1.1" }
   ],
@@ -14,7 +17,8 @@
       "msg_error": "We are experiencing some temporary difficulties. Please try again later or contact our support team.",
       "btn_confirm": "OK",
       "btn_cancel": "Cancel",
-      "msg_error_id": "(Error: %s)"
+      "msg_error_id": "(Error: %s)",
+      "btn_next": "Next"
     },
     "country_picker": {
       "lbl_select_country": "Select a country",

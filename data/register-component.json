@@ -214,14 +214,14 @@
       "imports": [
         "import { PasswordVerification,PasswordVerificationRef,PasswordMask } from 'react-native-register-component';",
         "import { AuthContext } from 'react-native-auth-component';",
-        "import { CustomerInvokeContext } from 'customer-invoke-component';"
+        "//import { CustomerInvokeContext } from 'customer-invoke-component';"
       ],
       "headers": [
         "const passwordRefs = useRef<PasswordVerificationRef>();",
         "const [isVisiblePassword, setVisiblePassword] = useState(true);",
         "const [isConfirmVisiblePassword, setConfirmVisiblePassword] = useState(true);",
         "const { login } = useContext(AuthContext);",
-        "const { setUserProfile } = useContext(CustomerInvokeContext);",
+        "//const { setUserProfile } = useContext(CustomerInvokeContext);",
         "",
         "const loginUser = async (data: any) => {",
         "  const _profile = await login(data.phoneNumber, data.password);",
@@ -372,6 +372,14 @@
       "lbl_password": "Password",
       "lbl_confirm_password": "Confirm Password",
       "val_enter_valid_password": "Password does not match"
+    },
+    "authorize_transfer_component": {
+      "lbl_header_title": "Please enter your passcode",
+      "lbl_header_subtitle": "Enter the One-Time Password (OTP) sent on your registered mobile number.",
+      "lbl_didnt_receive_otp": "Didn't receive a code? ",
+      "lbl_duration_format": "Send another (in %s sec)",
+      "btn_send_another": "Send another",
+      "btn_continue": "Continue"
     }
   }
 }
