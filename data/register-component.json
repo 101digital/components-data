@@ -111,7 +111,7 @@
         "            navigation.goBack();",
         "          },",
         "          onPress: () => {",
-        "            //navigation.navigate(Route.REGISTER_OTP_SCREEN, {});",
+        "            $fn-register-otp-screen //navigation.navigate(Route.REGISTER_OTP_SCREEN, {});",
         "          },",
         "        },",
         "        components: {",
@@ -161,7 +161,51 @@
         "    />",
         ""
       ],
-      "functions": []
+      "functions": [
+        {
+          "id": "fn-register-otp-screen",
+          "params": []
+        }
+      ]
+    },
+    {
+      "id": "user-register-otp-template",
+      "templateName": "user register otp template",
+      "componentName": "OtpVerification",
+      "imports": [
+        "import { OtpVerification,UsernameCapturingComponentRef } from 'react-native-register-component';"
+      ],
+      "headers": [
+        "const usernameRefs = useRef<UsernameCapturingComponentRef>();"
+      ],
+      "renders": [
+        "    <OtpVerification",
+        "      ref={usernameRefs}",
+        "      onPressBack={() => {",
+        "        navigation.goBack();",
+        "      }}",
+        "      onPress={() => {",
+        "        $fn-set-password-screen //navigation.navigate(Route.SET_PASSWORD_SCREEN, {});",
+        "      }}",
+        "      style={{",
+        "        otpFieldStyle: {",
+        "          focusCellContainerStyle: {",
+        "            borderBottomColor: '#14BDEB',",
+        "          },",
+        "          cellContainerStyle: {",
+        "            borderBottomColor: '#5E0CBC',",
+        "          },",
+        "        },",
+        "      }}",
+        "    />",
+        ""
+      ],
+      "functions": [
+        {
+          "id": "fn-set-password-screen",
+          "params": []
+        }
+      ]
     },
     {
       "id": "set-register-password-template",
