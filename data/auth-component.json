@@ -63,8 +63,19 @@
         "import { ProfileComponent } from 'react-native-auth-component';"
       ],
       "headers": [],
-      "renders": ["      <ProfileComponent />"],
-      "functions": []
+      "renders": [
+        "      <ProfileComponent",
+        "         onClickProfile: () => {",
+        "           $fn-view-settings",
+        "         },",
+        "      />"
+      ],
+      "functions": [
+        {
+          "id": "fn-view-settings",
+          "params": []
+        }
+      ]
     },
     {
       "id": "login-email-template",
