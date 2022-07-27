@@ -537,8 +537,6 @@
         "  DataPrivacyStatementIcon,",
         "} from 'react-native-auth-component';",
         "import moment from 'moment';",
-        "export type SettingsScreenParams = {};",
-
         "import {i18n} from '@/translations/translation-config';"
       ],
       "headers": [
