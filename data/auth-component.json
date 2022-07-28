@@ -748,7 +748,7 @@
         "                          fontWeight: '500',",
         "                          color: '#000000',",
         "                        }}>",
-        "                          {Customers List}",
+        "                          {'Customers List'}",
         "                        </Text>",
         "                      </View>",
         "                    </TouchableOpacity>",
