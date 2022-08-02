@@ -318,7 +318,7 @@
           ]
         },
         {
-          "id": "$fn-crypto-dashboard",
+          "id": "fn-crypto-dashboard",
           "params": []
         }
       ]
