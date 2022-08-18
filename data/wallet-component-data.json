@@ -357,6 +357,9 @@
         "          onLinkAccount={(_) => {",
         "            $fn-crypto-dashboard",
         "          }}",
+        "          onViewAccount={(_) => {",
+        "            $fn-crypto-dashboard2",
+        "          }}",
         "          onAddMoney={(wallet) => {",
         "            $fn-add-money",
         "          }}",
@@ -375,6 +378,13 @@
         "              top: 127 + statusBarHeight,",
         "              zIndex: 1,",
         "            },",
+        "            transactionCardComponentStyle:{",
+        "              transactionItemComponentStyle: {",
+        "                descriptionTextStyle: {",
+        "                  maxWidth: '85%',",
+        "                },",
+        "              },",
+        "            }",
         "          }}",
         "        />"
       ],
@@ -417,7 +427,21 @@
         },
         {
           "id": "fn-crypto-dashboard",
-          "params": []
+          "params": [
+            {
+              "data": false,
+              "isLink": false
+            }
+          ]
+        },
+        {
+          "id": "fn-crypto-dashboard2",
+          "params": [
+            {
+              "data": true,
+              "isLink": false
+            }
+          ]
         }
       ]
     },
@@ -613,7 +637,16 @@
       "headers": [
         "  const { colors } = useContext(ThemeContext);",
         "  const [isActive, setIsActive] = useState<boolean>(false);",
+        "  const [isWithToolTip, setIsWithToolTip] = useState<boolean>(false);",
         "",
+        "  useEffect(() => {",
+        "    if (route.params && route.params.data) {",
+        "      setIsActive(route.params.data);",
+        "    }",
+        "    if (route.params && route.params.isLink) {",
+        "      setIsWithToolTip(route.params.isLink);",
+        "    }",
+        "  }, [route]);",
         "  const carouselList = [",
         "    { item: <Page1 width={170} height={254} /> },",
         "    { item: <Page2 width={170} height={254} /> },",
@@ -668,7 +701,20 @@
         "                onTransferOut={() => {",
         "                  //navigation.navigate(Route.CRYPTO_TRANSFER_OUT_SCREEN, {});",
         "                }}",
+        "                onTransfer={() => {",
+        "                  //navigation.navigate(Route.CRYPTO_TRANSFER_IN_SCREEN, {})",
+        "                }}",
+        "                onViewAllCrypto={() => {",
+        "                  //navigation.navigate(Route.CRYPTO_TRANSFER_IN_SCREEN, {})",
+        "                }}",
+        "                onSearchingCrypto={() => {",
+        "                  //navigation.navigate(Route.CRYPTO_TRANSFER_IN_SCREEN, {})",
+        "                }}",
+        "                onSelectItemCurrency={() => {",
+        "                  //navigation.navigate(Route.CRYPTO_TRANSFER_IN_SCREEN, {})",
+        "                }}",
         "                isActive={isActive}",
+        "                isWithToolTip={isWithToolTip}",
         "                children={",
         "                  <View style={{flex: 1,alignItems: 'center'}}>",
         "                    <Carousel",
