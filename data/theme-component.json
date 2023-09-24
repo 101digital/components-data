@@ -1,7 +1,7 @@
 {
   "id": "theme-component",
   "name": "ThemeComponent",
-  "repository": "https://github.com/101digital/react-native-theme-component",
+  "repository": "https://github.com/101digital/tomato-pay-react-native-theme-component.git#appStudio/1.0.1",
   "dependencies": [
     {
       "name": "@react-native-async-storage/async-storage",

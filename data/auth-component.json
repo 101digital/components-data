@@ -1,7 +1,7 @@
 {
   "id": "auth-component",
   "name": "Auth Component",
-  "repository": "https://github.com/101digital/react-native-auth-component",
+  "repository": "https://github.com/101digital/react-native-auth-component.git#appStudio/1.0.3",
   "config": {
     "env": {
       "development": {
@@ -17,7 +17,19 @@
         "redirectUrl": "pay101://outh2_callback",
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
-        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout"
+        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
+        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
+        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"FNXSMYNB",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"http://localhost:3000",
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
+        "WALLET_URL":"wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
+
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -32,7 +44,18 @@
         "redirectUrl": "pay101://outh2_callback",
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
-        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout"
+        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
+        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
+        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"FNXSMYNB",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"http://localhost:3000",
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
+        "WALLET_URL":"wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -47,12 +70,23 @@
         "redirectUrl": "pay101://outh2_callback",
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
-        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout"
+        "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
+        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
+        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"FNXSMYNB",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"http://localhost:3000",
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
+        "WALLET_URL":"wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
       }
     }
   },
   "dependencies": [
-    { "name": "https://github.com/101digital/react-native-theme-component.git" }
+    { "name": "https://github.com/101digital/tomato-pay-react-native-theme-component.git#appStudio/1.0.1" }
   ],
   "templates": [
     {
@@ -807,7 +841,36 @@
           "params": []
         }
       ]
-    }
+    },
+    {
+      "id": "login-auth2-template",
+      "templateName": "Login with auth2 template",
+      "componentName": "LoginComponent",
+      "imports": [
+        "import React from 'react';",
+        "import { StackNavigationProp } from '@react-navigation/stack';",
+        "import { AuthRoutes } from '../../navigation/routes/AuthRoutes';",
+        "import { HomeRoutes } from '@/navigation/routes/HomeRoutes';",
+        "import { LoginComponent } from 'react-native-auth-component';",
+        "import { colors } from '../../assets/Colors';",
+      ],
+      "headers": [],
+      "renders": [
+        "     <LoginComponent",
+        "       loginSuccess={() => {",
+        "         navigation.navigate(HomeRoutes.Home);",
+        "       }}",
+        "       colors={colors}",
+        "       title={'Welcome to App studio'}",
+        "     />"
+      ],
+      "functions": [
+        {
+          "id": "fn-login-success",
+          "params": []
+        }
+      ]
+    },
   ],
   "texts": {
     "login_component": {
