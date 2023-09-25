@@ -11,6 +11,7 @@ const customerSupportComponentData = require("./data/customer-support-component-
 const customerInvokeComponentData = require("./data/customer-invoke-component-data.json");
 const accountOriginationComponentData = require("./data/account-origination-component-data.json");
 const registerComponentData = require("./data/register-component.json");
+const userProfileComponentData = require("./data/user-profile-component-data.json");
 
 exports.getDataByComponentId = id => {
   switch (id) {
@@ -40,6 +41,8 @@ exports.getDataByComponentId = id => {
       return accountOriginationComponentData;
     case "react-native-register-component":
       return registerComponentData;
+    case "user-profile-component":
+      return userProfileComponentData;
     default:
       break;
   }
