@@ -41,7 +41,7 @@ exports.getDataByComponentId = id => {
       return accountOriginationComponentData;
     case "react-native-register-component":
       return registerComponentData;
-    case "user-profile-component":
+    case "react-native-user-profile-component":
       return userProfileComponentData;
     default:
       break;
