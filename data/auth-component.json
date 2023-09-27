@@ -29,7 +29,6 @@
         "WALLET_URL":"wallet-service/1.0.0/",
         "MEMBERSHIP_URL":"membership-service/1.0.13/",
         "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
-
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -847,12 +846,11 @@
       "templateName": "Login with auth2 template",
       "componentName": "LoginComponent",
       "imports": [
-        "import React from 'react';",
         "import { StackNavigationProp } from '@react-navigation/stack';",
-        "import { AuthRoutes } from '../../navigation/routes/AuthRoutes';",
+        "import { AuthRoutes } from '@/navigation/routes/AuthRoutes';",
         "import { HomeRoutes } from '@/navigation/routes/HomeRoutes';",
         "import { LoginComponent } from 'react-native-auth-component';",
-        "import { colors } from '../../assets/Colors';",
+        "import { colors } from '@/assets/Colors';"
       ],
       "headers": [],
       "renders": [
@@ -870,7 +868,7 @@
           "params": []
         }
       ]
-    },
+    }
   ],
   "texts": {
     "login_component": {

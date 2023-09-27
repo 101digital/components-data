@@ -25,7 +25,7 @@
       "templateName": "Home Screen",
       "componentName": "UserProfileComponent",
       "imports": [
-        "import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';",
+        "import { TouchableOpacity } from 'react-native';",
         "import { useNavigation } from '@react-navigation/native';",
         "import { DashboardRoutes } from '@/navigation/routes/DashboardRoutes';",
         "import { fonts } from '@/assets/fonts';",
@@ -33,7 +33,6 @@
         "import { colors } from '@/assets/Colors';"
       ],
       "headers": [
-        "  const navigation = useNavigation();",
         "  const handleButtonPress = (showFinance: boolean) => {",
         "    // Navigate to the Dashboard screen with the button name as a parameter",
         "    // navigation.navigate('Dashboard', { isFinance: showFinance });",
