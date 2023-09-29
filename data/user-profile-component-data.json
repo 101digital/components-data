@@ -25,7 +25,6 @@
       "templateName": "Home Screen",
       "componentName": "UserProfileComponent",
       "imports": [
-        "import { TouchableOpacity } from 'react-native';",
         "import { useNavigation } from '@react-navigation/native';",
         "import { DashboardRoutes } from '@/navigation/routes/DashboardRoutes';",
         "import { fonts } from '@/assets/fonts';",
