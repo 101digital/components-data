@@ -12,6 +12,7 @@ const customerInvokeComponentData = require("./data/customer-invoke-component-da
 const accountOriginationComponentData = require("./data/account-origination-component-data.json");
 const registerComponentData = require("./data/register-component.json");
 const userProfileComponentData = require("./data/user-profile-component-data.json");
+const dashboardComponentData = require("./data/dashboard-component-data.json");
 
 exports.getDataByComponentId = id => {
   switch (id) {
@@ -43,6 +44,8 @@ exports.getDataByComponentId = id => {
       return registerComponentData;
     case "user-profile-component":
       return userProfileComponentData;
+    case "dashboard-component":
+      return dashboardComponentData;
     default:
       break;
   }
