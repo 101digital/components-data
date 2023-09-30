@@ -9,7 +9,6 @@
         "clientSecret": "Z5iWNRKGz_FiA4xOJ7RoDuonEvsa",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
-        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT",
         "authGrantType": "password",
         "authScope": "openid",
         "appGrantType": "client_credentials",
@@ -24,18 +23,17 @@
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"http://localhost:3000",
+        "REDIRECT_URI":"https://www.example.com",
         "API_BASE_URL":"https://api.dev.acsdigital.dev/",
-        "WALLET_URL":"wallet-service/1.0.0/",
-        "MEMBERSHIP_URL":"membership-service/1.0.13/",
-        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
+        "WALLET_URL":"https://api.dev.acsdigital.dev/wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"https://api.dev.acsdigital.dev/membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
         "clientSecret": "Z5iWNRKGz_FiA4xOJ7RoDuonEvsa",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
-        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/1.2.1-SNAPSHOT",
         "authGrantType": "password",
         "authScope": "openid",
         "appGrantType": "client_credentials",
@@ -50,18 +48,17 @@
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"http://localhost:3000",
+        "REDIRECT_URI":"https://www.example.com",
         "API_BASE_URL":"https://api.dev.acsdigital.dev/",
-        "WALLET_URL":"wallet-service/1.0.0/",
-        "MEMBERSHIP_URL":"membership-service/1.0.13/",
-        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
+        "WALLET_URL":"https://api.dev.acsdigital.dev/wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"https://api.dev.acsdigital.dev/membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
         "clientSecret": "Z5iWNRKGz_FiA4xOJ7RoDuonEvsa",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
-        "membershipBaseUrl": "https://sandbox.101digital.io/membership-service/v1.0",
         "authGrantType": "password",
         "authScope": "openid",
         "appGrantType": "client_credentials",
@@ -76,11 +73,11 @@
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"http://localhost:3000",
+        "REDIRECT_URI":"https://www.example.com",
         "API_BASE_URL":"https://api.dev.acsdigital.dev/",
-        "WALLET_URL":"wallet-service/1.0.0/",
-        "MEMBERSHIP_URL":"membership-service/1.0.13/",
-        "BANKING_PRODUCT_INFO_URL":"banking-product-info-service/1.0.0/"
+        "WALLET_URL":"https://api.dev.acsdigital.dev/wallet-service/1.0.0/",
+        "MEMBERSHIP_URL":"https://api.dev.acsdigital.dev/membership-service/1.0.13/",
+        "BANKING_PRODUCT_INFO_URL":"https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0/"
       }
     }
   },
