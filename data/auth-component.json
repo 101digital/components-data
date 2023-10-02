@@ -24,7 +24,7 @@
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -46,10 +46,7 @@
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
-        "WALLET_URL":"https://api.dev.acsdigital.dev/wallet-service/1.0.0/",
-        "MEMBERSHIP_URL":"https://api.dev.acsdigital.dev/membership-service/1.0.13/",
-        "BANKING_PRODUCT_INFO_URL":"https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0/"
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -71,10 +68,7 @@
         "BANK_ID":"FNXSMYNB",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/",
-        "WALLET_URL":"https://api.dev.acsdigital.dev/wallet-service/1.0.0/",
-        "MEMBERSHIP_URL":"https://api.dev.acsdigital.dev/membership-service/1.0.13/",
-        "BANKING_PRODUCT_INFO_URL":"https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0/"
+        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
       }
     }
   },
