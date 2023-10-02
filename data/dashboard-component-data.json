@@ -103,7 +103,6 @@
         "};"
       ],
       "headers": [
-        "   const route = useRoute();",
         "   const { isFinance } = route.params;",
         "",
         "   const [showDeposit, setShowDeposit] = useState(!isFinance);",
