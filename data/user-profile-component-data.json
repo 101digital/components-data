@@ -29,7 +29,8 @@
         "import Route from '@/navigation/route';",
         "import { fonts } from '@/assets/fonts';",
         "import { UserProfileComponent } from 'react-native-user-profile-component';",
-        "import { colors } from '@/assets/Colors';"
+        "import { colors } from '@/assets/Colors';",
+        "import { Button } from 'react-native-theme-component';"
       ],
       "headers": [
         "  const handleButtonPress = (showFinance: boolean) => {",
