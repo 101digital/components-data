@@ -8,13 +8,13 @@
   "config": {
     "env": {
       "development": {
-        "membershipBaseUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
       },
       "staging": {
-        "membershipBaseUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
       },
       "production": {
-        "membershipBaseUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
       }
     }
   },
@@ -26,7 +26,7 @@
       "componentName": "UserProfileComponent",
       "imports": [
         "import { useNavigation } from '@react-navigation/native';",
-        "import { DashboardRoutes } from '@/navigation/routes/DashboardRoutes';",
+        "import Route from '@/navigation/route';",
         "import { fonts } from '@/assets/fonts';",
         "import { UserProfileComponent } from 'react-native-user-profile-component';",
         "import { colors } from '@/assets/Colors';"
@@ -35,8 +35,8 @@
         "  const handleButtonPress = (showFinance: boolean) => {",
         "    // Navigate to the Dashboard screen with the button name as a parameter",
         "    // navigation.navigate('Dashboard', { isFinance: showFinance });",
-        "    navigation.navigate('Dashboard', {",
-        "        screen: DashboardRoutes.AccountSummary,",
+        "    navigation.navigate(Route.BOTTOM_NAVIGATOR, {",
+        "        screen: Route.ACCOUNT_SUMMARY_SCREEN,",
         "        params: { isFinance: showFinance },",
         "      });",
         "  };"
@@ -45,6 +45,34 @@
         "        <>",
         "            <View style={{flex: 1,justifyContent: 'center',alignItems: 'center',backgroundColor: colors.White}}>",
         "               <UserProfileComponent /> ",
+        "               <View style={{",
+        "                          flex: 1,",
+        "                          flexDirection:'row',",
+        "                          alignItems: 'center',",
+        "                        }}>",
+        "                      <Button",
+        "                        label='Deposit'",
+        "                        onPress={() => handleButtonPress(false)}",
+        "                        variant= 'primary'",
+        "                        style={{",
+        "                          primaryContainerStyle: {",
+        "                            flex: 1,",
+        "                            marginHorizontal:20",
+        "                          }",
+        "                        }}",
+        "                      />",
+        "                      <Button",
+        "                        label='Finance'",
+        "                        onPress={() => handleButtonPress(true)}",
+        "                        variant= 'primary'",
+        "                        style={{",
+        "                          primaryContainerStyle: {",
+        "                            flex: 1,",
+        "                            marginHorizontal:20",
+        "                          }",
+        "                        }}",
+        "                      />",
+        "                      </View>",
         "            </View>",
         "        </>"
       ],
