@@ -836,7 +836,7 @@
       "imports": [
         "import { StackNavigationProp } from '@react-navigation/stack';",
         "import { AuthRoutes } from '@/navigation/routes/AuthRoutes';",
-        "import Route from '@/navigation/route';",
+        "import Route from '@/navigation/Route';",
         "import { LoginComponent } from 'react-native-auth-component';",
         "import { colors } from '@/assets/Colors';"
       ],
