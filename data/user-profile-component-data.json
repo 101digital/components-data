@@ -26,7 +26,7 @@
       "componentName": "UserProfileComponent",
       "imports": [
         "import { useNavigation } from '@react-navigation/native';",
-        "import Route from '@/navigation/Route';",
+        "import Route from '@/navigation/routes';",
         "import { fonts } from '@/assets/fonts';",
         "import { UserProfileComponent } from 'react-native-user-profile-component';",
         "import { colors } from '@/assets/Colors';",
@@ -53,7 +53,7 @@
         "                        }}>",
         "                      <Button",
         "                        label='Deposit'",
-        "                        onPress={() => handleButtonPress(false)}",
+        "                        onPress={() => $onDepositClick}",
         "                        variant= 'primary'",
         "                        style={{",
         "                          primaryContainerStyle: {",
@@ -64,7 +64,7 @@
         "                      />",
         "                      <Button",
         "                        label='Finance'",
-        "                        onPress={() => handleButtonPress(true)}",
+        "                        onPress={() => $onFinanceClick}",
         "                        variant= 'primary'",
         "                        style={{",
         "                          primaryContainerStyle: {",
@@ -77,7 +77,14 @@
         "            </View>",
         "        </>"
       ],
-      "functions": []
+      "functions": [
+        {
+          "id": "onDepositClick"
+        },
+        {
+          "id": "onFinanceClick"
+        }
+      ]
     },
     {
       "id": "user-profile-component-template-with-props",
@@ -85,7 +92,7 @@
       "componentName": "UserProfileComponent",
       "imports": [
         "import { useNavigation } from '@react-navigation/native';",
-        "import Route from '@/navigation/Route';",
+        "import Route from '@/navigation/routes';",
         "import { fonts } from '@/assets/fonts';",
         "import { UserProfileComponent } from 'react-native-user-profile-component';",
         "import { colors } from '@/assets/Colors';",
