@@ -263,7 +263,8 @@
       "import Homescreen, {USER_PROFILE_FIELDS} from '../../src/screens/homeScreen/Homescreen';",
       "import {UserProvider} from 'react-native-user-profile-component';",
       "import {AuthProvider} from 'react-native-auth-component';",
-      "import Route from '../../src/navigation/Route';"
+      "import Route from '../../src/navigation/Route';",
+      ""
     ],
     "describe": [
       "describe('Home screen', () => {",
