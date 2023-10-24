@@ -255,5 +255,61 @@
       "lbl_bank": "Bank",
       "lbl_account_number": "UnionDigital Bank Account No."
     }
+  },
+  "unitTest": {
+    "imports": [
+      "import React from 'react';",
+      "import {render, waitFor, fireEvent} from '@testing-library/react-native';",
+      "import Homescreen, {USER_PROFILE_FIELDS} from '../../src/screens/homeScreen/Homescreen';",
+      "import {UserProvider} from 'react-native-user-profile-component';",
+      "import {AuthProvider} from 'react-native-auth-component';",
+      "import Route from '../../src/navigation/Route';"
+    ],
+    "describe": [
+      "describe('Home screen', () => {",
+      "const navigation = {",
+      "    navigate: jest.fn(),",
+      "    goBack: jest.fn(),",
+      "};",
+      "const screenSetup = () =>",
+      "    render(",
+      "        <AuthProvider>",
+      "            <UserProvider>",
+      "                <Homescreen navigation={navigation}/>",
+      "            </UserProvider>",
+      "        </AuthProvider>",
+      "    );",
+      "$it",
+      "",
+      "it('deposit button on press and navigate to screen with params correctly', async () => {",
+      "    const {getByTestId} = screenSetup();",
+      "    await waitFor(() => {",
+      "        fireEvent.press(getByTestId('btn-deposit'));",
+      "    });",
+      "",
+      "    await waitFor(() => {",
+      "        expect(navigation.navigate).toBeCalledWith(Route.BOTTOM_NAVIGATOR, {",
+      "            screen: Route.ACCOUNT_SUMMARY_SCREEN,",
+      "            params: { isFinance: false },",
+      "        })",
+      "    });",
+      "});",
+      "",
+      "it('finance button on press and navigate to screen with params correctly', async () => {",
+      "    const {getByTestId} = screenSetup();",
+      "    await waitFor(() => {",
+      "        fireEvent.press(getByTestId('btn-finance'));",
+      "    });",
+      "",
+      "    await waitFor(() => {",
+      "        expect(navigation.navigate).toBeCalledWith(Route.BOTTOM_NAVIGATOR, {",
+      "            screen: Route.ACCOUNT_SUMMARY_SCREEN,",
+      "            params: { isFinance: true },",
+      "        })",
+      "    });",
+      "});",
+
+      "});"
+    ]
   }
 }
