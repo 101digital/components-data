@@ -5,8 +5,8 @@
   "config": {
     "env": {
       "development": {
-        "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
-        "clientSecret": "Z5iWNRKGz_FiA4xOJ7RoDuonEvsa",
+        "clientId": "gltBKX0Xvbt5HTRPTPdcuicabRUa",
+        "clientSecret": "vCRObVDOb_vlEctFor8X6LFWArca",
         "ternantDomain": "carbon.super",
         "tokenBaseUrl": "https://sandbox.101digital.io/token",
         "authGrantType": "password",
