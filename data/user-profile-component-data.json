@@ -260,7 +260,7 @@
     "imports": [
       "import React from 'react';",
       "import {render, waitFor, fireEvent} from '@testing-library/react-native';",
-      "import Homescreen, {USER_PROFILE_FIELDS} from '../../src/screens/homeScreen/Homescreen';",
+      "import HomeScreen from '../../src/screens/homeScreen/HomeScreen';",
       "import {UserProvider} from 'react-native-user-profile-component';",
       "import {AuthProvider} from 'react-native-auth-component';",
       "import Route from '../../src/navigation/Route';",
@@ -276,7 +276,7 @@
       "    render(",
       "        <AuthProvider>",
       "            <UserProvider>",
-      "                <Homescreen navigation={navigation}/>",
+      "                <HomeScreen navigation={navigation}/>",
       "            </UserProvider>",
       "        </AuthProvider>",
       "    );",
