@@ -17,14 +17,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
-        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
         "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"FNXSMYNB",
+        "BANK_ID":"ACDBMYK2",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -39,14 +39,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
-        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
         "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"FNXSMYNB",
+        "BANK_ID":"ACDBMYK2",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -61,14 +61,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"7d12245c-a9c7-41bd-875a-0fda898c66dd",
-        "APP_ID":"4b6cea4c-88be-4ffe-b061-952b233f8b6b",
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
         "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
         "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"FNXSMYNB",
+        "BANK_ID":"ACDBMYK2",
         "AUTH_URL":"https://auth.pingone.asia/",
         "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api.dev.acsdigital.dev/"
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       }
     }
   },
