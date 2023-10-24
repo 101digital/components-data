@@ -8,16 +8,16 @@
   "config": {
     "env": {
       "development": {
-        "walletUrl": "https://api.dev.acsdigital.dev/wallet-service/1.0.0",
-        "bankingProductInfoUrl": "https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0"
+        "walletUrl": "https://api-neobank-dev.101digital.io/wallet-service/1.0.0",
+        "bankingProductInfoUrl": "https://api-neobank-dev.101digital.io/banking-product-info-service/1.0.0"
       },
       "staging": {
-        "walletUrl": "https://api.dev.acsdigital.dev/wallet-service/1.0.0",
-        "bankingProductInfoUrl": "https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0"
+        "walletUrl": "https://api-neobank-dev.101digital.io/wallet-service/1.0.0",
+        "bankingProductInfoUrl": "https://api-neobank-dev.101digital.io/banking-product-info-service/1.0.0"
       },
       "production": {
-        "walletUrl": "https://api.dev.acsdigital.dev/wallet-service/1.0.0",
-        "bankingProductInfoUrl": "https://api.dev.acsdigital.dev/banking-product-info-service/1.0.0"
+        "walletUrl": "https://api-neobank-dev.101digital.io/wallet-service/1.0.0",
+        "bankingProductInfoUrl": "https://api-neobank-dev.101digital.io/banking-product-info-service/1.0.0"
       }
     }
   },

@@ -8,13 +8,13 @@
   "config": {
     "env": {
       "development": {
-        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api-neobank-dev.101digital.io/membership-service/1.0.13"
       },
       "staging": {
-        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api-neobank-dev.101digital.io/membership-service/1.0.13"
       },
       "production": {
-        "membershipUrl": "https://api.dev.acsdigital.dev/membership-service/1.0.13"
+        "membershipUrl": "https://api-neobank-dev.101digital.io/membership-service/1.0.13"
       }
     }
   },
