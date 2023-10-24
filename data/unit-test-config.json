@@ -1,0 +1,8 @@
+{
+  "id": "unit-test-configuration",
+  "name": "Unit Test Configuration",
+  "jestConfig": {
+    "name": "jest.config.js",
+    "data": "module.exports = {\n  preset: 'react-native',\n  \"transformIgnorePatterns\": [\n    \"node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic|react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)\"\n  ],\n  \"setupFiles\": [\n    \"<rootDir>/setup-tests.js\"\n  ],\n};"
+  }
+}
