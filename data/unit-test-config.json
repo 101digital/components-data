@@ -3,7 +3,7 @@
   "name": "Unit Test Configuration",
   "jestConfig": {
     "fileName": "jest.config.js",
-    "data": "module.exports = {\n  preset: 'react-native',\n  \"transformIgnorePatterns\": [\n    \"node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic|react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)\"\n  ],\n  \"setupFiles\": [\n    \"<rootDir>/setup-tests.js\"\n  ],\n};"
+    "data": "module.exports = {\n  preset: 'react-native',\n  \"transformIgnorePatterns\": [\n    \"node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic|react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)\"\n  ],\n  \"setupFiles\": [\n    \"<rootDir>/setup-tests.js\"\n  ],\n  \"reporters\": [\n    \"default\",\n    \"jest-html-reporters\"\n  ],\n};"
   },
   "setUpFiles": {
     "fileName": "setup-tests.js",
