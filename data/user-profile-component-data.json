@@ -148,6 +148,51 @@
         "        </>"
       ],
       "functions": []
+    },
+    {
+      "id": "user-profile-component-template-with-props-2",
+      "templateName": "Home Screen",
+      "componentName": "UserProfileComponent",
+      "imports": [
+        "import { useNavigation } from '@react-navigation/native';",
+        "import Route from '@/navigation/routes';",
+        "import { fonts } from '@/assets/fonts';",
+        "import { UserProfileComponent,useUser } from 'react-native-user-profile-component';",
+        "import { colors } from '@/assets/Colors';",
+        "import { Button,Layouts } from 'react-native-theme-component';"
+      ],
+      "headers": [
+        "  const handleButtonPress = (showFinance: boolean) => {",
+        "    // Navigate to the Dashboard screen with the button name as a parameter",
+        "    // navigation.navigate('Dashboard', { isFinance: showFinance });",
+        "    navigation.navigate(Route.BOTTOM_NAVIGATOR, {",
+        "        screen: Route.ACCOUNT_SUMMARY_SCREEN,",
+        "        params: { isFinance: showFinance },",
+        "      });",
+        "  };"
+      ],
+      "renders": [
+        "        <>",
+        "        <Layouts type='form'>",
+        "               <UserProfileComponent $component-props/>",
+        "            </Layouts>",
+        "            <Layouts type='bottom-sticky-content'>",
+        "                      <Button",
+        "                        testID={'btn-finance'}",
+        "                        label='Finance'",
+        "                        onPress={() => handleButtonPress(true)}",
+        "                        variant= 'primary'",
+        "                        style={{",
+        "                          primaryContainerStyle: {",
+        "                            flex: 1,",
+        "                            marginHorizontal:20",
+        "                          }",
+        "                        }}",
+        "                      />",
+        "                      </Layouts>",
+        "        </>"
+      ],
+      "functions": []
     }
   ],
   "texts": {
