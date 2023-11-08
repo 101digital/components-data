@@ -157,9 +157,10 @@
         "import { useNavigation } from '@react-navigation/native';",
         "import Route from '@/navigation/routes';",
         "import { fonts } from '@/assets/fonts';",
-        "import { UserProfileComponent,useUser } from 'react-native-user-profile-component';",
+        "import { useUser } from 'react-native-user-profile-component';",
         "import { colors } from '@/assets/Colors';",
-        "import { Button,Layouts } from 'react-native-theme-component';"
+        "import { Button,Layouts } from 'react-native-theme-component';",
+        "import UserProfileComponent  from '@/components/userprofile';"
       ],
       "headers": [
         "  const handleButtonPress = (showFinance: boolean) => {",
