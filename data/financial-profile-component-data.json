@@ -21,7 +21,7 @@
   "dependencies": [],
   "templates": [
     {
-      "id": "financial-profile-summary-component",
+      "id": "financial-profile-summary-template",
       "templateName": "Home Screen",
       "componentName": "FinancialProfileComponent",
       "imports": ["$component-imports"],

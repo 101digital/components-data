@@ -89,51 +89,32 @@
       ]
     },
     {
-      "id": "user-profile-component-template-with-props",
+      "id": "user-profile-form-component",
       "templateName": "Home Screen",
       "componentName": "UserProfileComponent",
       "imports": [
         "import { useNavigation } from '@react-navigation/native';",
         "import Route from '@/navigation/routes';",
         "import { fonts } from '@/assets/fonts';",
-        "import { UserProfileComponent } from 'react-native-user-profile-component';",
+        "$component-imports",
         "import { colors } from '@/assets/Colors';",
-        "import { Button } from 'react-native-theme-component';"
+        "import { Button,Layouts } from 'react-native-theme-component';"
       ],
       "headers": [
         "  const handleButtonPress = (showFinance: boolean) => {",
         "    // Navigate to the Dashboard screen with the button name as a parameter",
         "    // navigation.navigate('Dashboard', { isFinance: showFinance });",
-        "    navigation.navigate(Route.BOTTOM_NAVIGATOR, {",
-        "        screen: Route.ACCOUNT_SUMMARY_SCREEN,",
-        "        params: { isFinance: showFinance },",
-        "      });",
+        "    navigation.navigate(Route.USER_PROFILE_SCREEN);",
         "  };"
       ],
       "renders": [
         "        <>",
-        "            <View style={{flex: 1,justifyContent: 'center',alignItems: 'center',backgroundColor: colors.White}}>",
-        "               <UserProfileComponent $component-props/> ",
-        "               <View style={{",
-        "                          flex: 1,",
-        "                          flexDirection:'row',",
-        "                          alignItems: 'center',",
-        "                        }}>",
-        "                      <Button",
-        "                        testID={'btn-deposit'}",
-        "                        label='Deposit'",
-        "                        onPress={() => handleButtonPress(false)}",
-        "                        variant= 'primary'",
-        "                        style={{",
-        "                          primaryContainerStyle: {",
-        "                            flex: 1,",
-        "                            marginHorizontal:20",
-        "                          }",
-        "                        }}",
-        "                      />",
+        "        <Layouts type='form'>",
+        "            $component-name",
+        "            <Layouts type='bottom-sticky-content'>",
         "                      <Button",
         "                        testID={'btn-finance'}",
-        "                        label='Finance'",
+        "                        label='Profile Summary'",
         "                        onPress={() => handleButtonPress(true)}",
         "                        variant= 'primary'",
         "                        style={{",
@@ -143,8 +124,8 @@
         "                          }",
         "                        }}",
         "                      />",
-        "                      </View>",
-        "            </View>",
+        "               </Layouts>",
+        "         </Layouts>",
         "        </>"
       ],
       "functions": []
@@ -191,6 +172,39 @@
         "                        }}",
         "                      />",
         "                      </Layouts>",
+        "        </>"
+      ],
+      "functions": []
+    },
+    {
+      "id": "user-profile-summary-template",
+      "templateName": "Home Screen",
+      "componentName": "UserProfileComponent",
+      "imports": [
+        "import { useNavigation } from '@react-navigation/native';",
+        "import Route from '@/navigation/routes';",
+        "import { fonts } from '@/assets/fonts';",
+        "$component-imports",
+        "import { colors } from '@/assets/Colors';",
+        "import { Button } from 'react-native-theme-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
+    },
+    {
+      "id": "financial-profile-summary-template",
+      "templateName": "Home Screen",
+      "componentName": "FinancialProfileComponent",
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
         "        </>"
       ],
       "functions": []
