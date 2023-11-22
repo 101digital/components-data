@@ -1,0 +1,38 @@
+{
+  "id": "financial-profile-component",
+  "name": "Financial Profile Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/101digital/financial-profile-component.git"
+  },
+  "config": {
+    "env": {
+      "development": {
+        "financialBaseUrl": "https://api-neobank-dev.101digital.io/financial-profile-service/1.0.0"
+      },
+      "staging": {
+        "financialBaseUrl": "https://api-neobank-dev.101digital.io/financial-profile-service/1.0.0"
+      },
+      "production": {
+        "financialBaseUrl": "https://api-neobank-dev.101digital.io/financial-profile-service/1.0.0"
+      }
+    }
+  },
+  "dependencies": [],
+  "templates": [
+    {
+      "id": "financial-profile-summary-component",
+      "templateName": "Home Screen",
+      "componentName": "FinancialProfileComponent",
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
+    }
+  ],
+  "texts": {}
+}
