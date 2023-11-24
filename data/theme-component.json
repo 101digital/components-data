@@ -10,7 +10,21 @@
     { "name": "react-native-localize", "version": "^2.1.1" },
     { "name": "react-native-svg", "version": "^12.1.1" }
   ],
-  "templates": [],
+  "templates": [
+    {
+      "id": "button-group-template",
+      "templateName": "Home Screen",
+      "componentName": "ThemeComponent",
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
+    }
+  ],
   "texts": {
     "common": {
       "lbl_error": "Something went wrong",
