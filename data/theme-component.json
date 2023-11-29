@@ -7,15 +7,23 @@
       "name": "@react-native-async-storage/async-storage",
       "version": "^1.15.5"
     },
-    { "name": "react-native-localize", "version": "^2.1.1" },
-    { "name": "react-native-svg", "version": "^12.1.1" }
+    {
+      "name": "react-native-localize",
+      "version": "^2.1.1"
+    },
+    {
+      "name": "react-native-svg",
+      "version": "^12.1.1"
+    }
   ],
   "templates": [
     {
       "id": "button-group-template",
       "templateName": "Home Screen",
       "componentName": "ThemeComponent",
-      "imports": ["$component-imports"],
+      "imports": [
+        "$component-imports"
+      ],
       "headers": [],
       "renders": [
         "        <>",
@@ -26,38 +34,75 @@
     }
   ],
   "texts": {
-    "common": {
-      "lbl_error": "Something went wrong",
-      "msg_error": "We are experiencing some temporary difficulties. Please try again later or contact our support team.",
-      "btn_confirm": "OK",
-      "btn_cancel": "Cancel",
-      "msg_error_id": "(Error: %s)",
-      "btn_next": "Next"
+    "en": {
+      "common": {
+        "lbl_error": "Something went wrong",
+        "msg_error": "We are experiencing some temporary difficulties. Please try again later or contact our support team.",
+        "btn_confirm": "OK",
+        "btn_cancel": "Cancel",
+        "msg_error_id": "(Error: %s)",
+        "btn_next": "Next"
+      },
+      "country_picker": {
+        "lbl_select_country": "Select a country",
+        "plh_search_country": "Search country"
+      },
+      "date_picker": {
+        "btn_close": "Close",
+        "btn_done": "Done",
+        "lbl_select_date": "Select Date",
+        "lbl_select_date_range": "Select A Date Range",
+        "btn_apply_date_range": "Apply",
+        "btn_cancel_date_range": "Cancel"
+      },
+      "image_picker": {
+        "msg_loading_picker": "Please waiting...",
+        "msg_allow_file_type": "Allowed file types are PNG and JPG/JPEG",
+        "msg_max_file_size": "Maximum file size should be 2MB",
+        "msg_allow_access_camera": "Allow Application To Access Your Camera",
+        "msg_turn_camera_setting": "Tap Open Settings and turn on Camera to allow access.",
+        "btn_cancel": "Cancel",
+        "btn_open_setting": "Open Settings",
+        "msg_allow_access_photo": "Allow Application To Access Your Photos",
+        "msg_turn_photo_setting": "Tap Open Settings and turn on Photos to allow access",
+        "btn_take_photo": "Take photo",
+        "btn_choose_photo": "Choose photo"
+      }
     },
-    "country_picker": {
-      "lbl_select_country": "Select a country",
-      "plh_search_country": "Search country"
-    },
-    "date_picker": {
-      "btn_close": "Close",
-      "btn_done": "Done",
-      "lbl_select_date": "Select Date",
-      "lbl_select_date_range": "Select A Date Range",
-      "btn_apply_date_range": "Apply",
-      "btn_cancel_date_range": "Cancel"
-    },
-    "image_picker": {
-      "msg_loading_picker": "Please waiting...",
-      "msg_allow_file_type": "Allowed file types are PNG and JPG/JPEG",
-      "msg_max_file_size": "Maximum file size should be 2MB",
-      "msg_allow_access_camera": "Allow Application To Access Your Camera",
-      "msg_turn_camera_setting": "Tap Open Settings and turn on Camera to allow access.",
-      "btn_cancel": "Cancel",
-      "btn_open_setting": "Open Settings",
-      "msg_allow_access_photo": "Allow Application To Access Your Photos",
-      "msg_turn_photo_setting": "Tap Open Settings and turn on Photos to allow access",
-      "btn_take_photo": "Take photo",
-      "btn_choose_photo": "Choose photo"
+    "vi": {
+      "common": {
+        "lbl_error": "Có lỗi xãy ra",
+        "msg_error": "Chúng tôi đang gặp một số khó khăn tạm thời. Vui lòng thử lại sau hoặc liên hệ với nhóm hỗ trợ của chúng tôi.",
+        "btn_confirm": "Được",
+        "btn_cancel": "Hủy",
+        "msg_error_id": "(Lỗi: %s)",
+        "btn_next": "Tiếp theo"
+      },
+      "country_picker": {
+        "lbl_select_country": "Chọn quốc gia",
+        "plh_search_country": "Tìm kiếm quốc gia"
+      },
+      "date_picker": {
+        "btn_close": "Đóng",
+        "btn_done": "Xong",
+        "lbl_select_date": "Chọn ngày",
+        "lbl_select_date_range": "Chọn Phạm vi Ngày",
+        "btn_apply_date_range": "Áp dụng",
+        "btn_cancel_date_range": "Hủy"
+      },
+      "image_picker": {
+        "msg_loading_picker": "Xin vui lòng chờ...",
+        "msg_allow_file_type": "Các loại tệp được phép là PNG và JPG/JPEG",
+        "msg_max_file_size": "Kích thước tệp tối đa phải là 2MB",
+        "msg_allow_access_CAMERA": "Cho phép ứng dụng truy cập vào máy ảnh của bạn",
+        "msg_turn_Camera_setting": "Nhấn vào Mở Cài đặt và bật Máy ảnh để cho phép truy cập.",
+        "btn_cancel": "Hủy",
+        "btn_open_setting": "Mở cài đặt",
+        "msg_allow_access_photo": "Cho phép ứng dụng truy cập ảnh của bạn",
+        "msg_turn_photo_setting": "Nhấn vào Mở Cài đặt và bật Ảnh để cho phép truy cập",
+        "btn_take_photo": "Chụp ảnh",
+        "btn_choose_photo": "Chọn ảnh"
+      }
     }
   }
 }

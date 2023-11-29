@@ -17,14 +17,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -39,14 +39,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -61,19 +61,21 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       }
     }
   },
   "dependencies": [
-    { "name": "https://github.com/101digital/tomato-pay-react-native-theme-component.git#appStudio/1.0.1" }
+    {
+      "name": "https://github.com/101digital/tomato-pay-react-native-theme-component.git#appStudio/1.0.1"
+    }
   ],
   "templates": [
     {
@@ -106,7 +108,9 @@
         "import { LoginComponent } from 'react-native-auth-component';",
         "import { ThemeContext } from 'react-native-theme-component';"
       ],
-      "headers": ["  const { i18n } = useContext(ThemeContext);"],
+      "headers": [
+        "  const { i18n } = useContext(ThemeContext);"
+      ],
       "renders": [
         "      <LoginComponent",
         "        Root={{",
@@ -367,7 +371,9 @@
         "import { AuthContext } from 'react-native-auth-component';",
         "import { Button } from 'react-native-theme-component';"
       ],
-      "headers": ["  const { logout } = useContext(AuthContext);"],
+      "headers": [
+        "  const { logout } = useContext(AuthContext);"
+      ],
       "renders": [
         "      <Button label='LOGOUT' style={{ primaryContainerStyle: { margin: 20 } }} onPress={logout} />"
       ]
@@ -575,7 +581,6 @@
         "  const {logout, profile} = useContext(AuthContext);",
         "  console.log('route ', route);",
         "  moment.locale('en');",
-
         "  const fullName = `${profile?.firstName} ${profile?.lastName}`.trim();",
         "  const shortName = () => {",
         "    const parts = fullName.split(' ');",
@@ -838,16 +843,41 @@
         "import { AuthRoutes } from '@/navigation/routes/AuthRoutes';",
         "import Route from '@/navigation/routes';",
         "import { LoginComponent } from 'react-native-auth-component';",
-        "import { colors } from '@/assets/Colors';"
+        "import { Switch } from 'react-native';",
+        "import { colors } from '@/assets/Colors';",
+        "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';",
+        "import {ThemeContext} from 'react-native-theme-component';"
       ],
-      "headers": [],
+      "headers": [
+        "  const { i18n } = useContext(ThemeContext);",
+        "  const [appLanguage, setAppLanguage] = useState<APP_LOCALE>(APP_LOCALE.EN);",
+        "  const onSwitchLanguage = () => {",
+        "  if (appLanguage === APP_LOCALE.VI) {",
+        "   setAppLanguage(APP_LOCALE.EN);",
+        "   changeLanguage(APP_LOCALE.EN);",
+        "  } else {",
+        "   setAppLanguage(APP_LOCALE.VI);",
+        "   changeLanguage(APP_LOCALE.VI);",
+        "  }",
+        "  };"
+      ],
       "renders": [
+        "<Text>App language</Text>",
+        "<View",
+        "  style={{",
+        "    flexDirection: 'row',",
+        "   alignItems: 'center',",
+        "  }}>",
+        "  <Text style={{marginRight: 15}}>English</Text>",
+        "  <Switch value={appLanguage === APP_LOCALE.VI} onChange={onSwitchLanguage} />",
+        "  <Text style={{marginLeft: 10}}>Vietnam</Text>",
+        "</View>",
         "     <LoginComponent",
         "       loginSuccess={() => {",
         "         navigation.navigate(Route.HOME_SCREEN);",
         "       }}",
         "       colors={colors}",
-        "       title={'Welcome to App studio'}",
+        "       title={i18n.t('login_component.lbl_sign_in')}",
         "     />"
       ],
       "functions": [
@@ -859,35 +889,69 @@
     }
   ],
   "texts": {
-    "login_component": {
-      "lbl_sign_in": "Sign In",
-      "lbl_email": "Email",
-      "lbl_mobile_number": "Mobile number",
-      "lbl_password": "Password",
-      "btn_forgot_password": "Forgot password",
-      "btn_login": "LOGIN",
-      "btn_sign_up": "Sign up here",
-      "lbl_not_an_account": "Not a user yet?"
+    "en": {
+      "login_component": {
+        "lbl_sign_in": "Sign In",
+        "lbl_email": "Email",
+        "lbl_mobile_number": "Mobile number",
+        "lbl_password": "Password",
+        "btn_forgot_password": "Forgot password",
+        "btn_login": "LOGIN",
+        "btn_sign_up": "Sign up here",
+        "lbl_not_an_account": "Not a user yet?"
+      },
+      "change_password": {
+        "lbl_change_password": "Change Password",
+        "lbl_sub_title": "Enter details below.",
+        "lbl_current_password": "Current Password",
+        "lbl_new_password": "New Password",
+        "lbl_confirm_password": "Confirm New Password",
+        "msg_rule_1": "Must be at least 8 characters",
+        "msg_rule_2": "Must contain at least 1 number",
+        "msg_rule_3": "Must contain at least 1 upper case",
+        "msg_rule_4": "Must contain at least 1 special character",
+        "plh_current_password": "Enter current password",
+        "plh_new_password": "Enter new password",
+        "plh_confirm_password": "Re-enter new password",
+        "val_enter_valid_password": "Password does not match",
+        "lbl_error_title": "Oops!",
+        "lbl_error_message": "The current password you entered is invalid. Please try again.",
+        "lbl_success_title": "Success!",
+        "msg_success": "Success!",
+        "btn_success_next": "Proceed to dashboard"
+      }
     },
-    "change_password": {
-      "lbl_change_password": "Change Password",
-      "lbl_sub_title": "Enter details below.",
-      "lbl_current_password": "Current Password",
-      "lbl_new_password": "New Password",
-      "lbl_confirm_password": "Confirm New Password",
-      "msg_rule_1": "Must be at least 8 characters",
-      "msg_rule_2": "Must contain at least 1 number",
-      "msg_rule_3": "Must contain at least 1 upper case",
-      "msg_rule_4": "Must contain at least 1 special character",
-      "plh_current_password": "Enter current password",
-      "plh_new_password": "Enter new password",
-      "plh_confirm_password": "Re-enter new password",
-      "val_enter_valid_password": "Password does not match",
-      "lbl_error_title": "Oops!",
-      "lbl_error_message": "The current password you entered is invalid. Please try again.",
-      "lbl_success_title": "Success!",
-      "msg_success": "Success!",
-      "btn_success_next": "Proceed to dashboard"
+    "vi": {
+      "login_component": {
+        "lbl_sign_in": "Đăng nhập",
+        "lbl_email": "Email",
+        "lbl_mobile_number": "Số di động",
+        "lbl_password": "Mật khẩu",
+        "btn_forgot_password": "Quên mật khẩu",
+        "btn_login": "ĐĂNG NHẬP",
+        "btn_sign_up": "Đăng ký tại đây",
+        "lbl_not_an_account": "Chưa phải là người dùng?"
+      },
+      "change_password": {
+        "lbl_change_password": "Đổi mật khẩu",
+        "lbl_sub_title": "Nhập thông tin chi tiết bên dưới.",
+        "lbl_current_password": "Mật khẩu hiện tại",
+        "lbl_new_password": "Mật khẩu mới",
+        "lbl_confirm_password": "Xác nhận mật khẩu mới",
+        "msg_rule_1": "Phải có ít nhất 8 ký tự",
+        "msg_rule_2": "Phải chứa ít nhất 1 số",
+        "msg_rule_3": "Phải chứa ít nhất 1 chữ hoa",
+        "msg_rule_4": "Phải chứa ít nhất 1 ký tự đặc biệt",
+        "plh_current_password": "Nhập mật khẩu hiện tại",
+        "plh_new_password": "Nhập mật khẩu mới",
+        "plh_confirm_password": "Nhập lại mật khẩu mới",
+        "val_enter_valid_password": "Mật khẩu không khớp",
+        "lbl_error_title": "Rất tiếc!",
+        "lbl_error_message": "Mật khẩu hiện tại bạn nhập không hợp lệ. Vui lòng thử lại.",
+        "lbl_success_title": "Thành công!",
+        "msg_success": "Thành công!",
+        "btn_success_next": "Tiến tới bảng điều khiển"
+      }
     }
   }
 }
