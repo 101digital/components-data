@@ -17,14 +17,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID": "ACDBMYK2",
-        "AUTH_URL": "https://auth.pingone.asia/",
-        "REDIRECT_URI": "https://www.example.com",
-        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"ACDBMYK2",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"https://www.example.com",
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -39,14 +39,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID": "ACDBMYK2",
-        "AUTH_URL": "https://auth.pingone.asia/",
-        "REDIRECT_URI": "https://www.example.com",
-        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"ACDBMYK2",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"https://www.example.com",
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -61,14 +61,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID": "ACDBMYK2",
-        "AUTH_URL": "https://auth.pingone.asia/",
-        "REDIRECT_URI": "https://www.example.com",
-        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
+        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID":"ACDBMYK2",
+        "AUTH_URL":"https://auth.pingone.asia/",
+        "REDIRECT_URI":"https://www.example.com",
+        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
       }
     }
   },
@@ -879,6 +879,33 @@
         "       colors={colors}",
         "       title={i18n.t('login_component.lbl_sign_in')}",
         "     />"
+      ],
+      "functions": [
+        {
+          "id": "fn-login-success",
+          "params": []
+        }
+      ]
+    },
+    {
+      "id": "login-with-email-template",
+      "templateName": "Login with email template",
+      "componentName": "LoginComponent",
+      "imports": [
+        "import { StackNavigationProp } from '@react-navigation/stack';",
+        "import { AuthRoutes } from '@/navigation/routes/AuthRoutes';",
+        "import { useNavigation } from '@react-navigation/native';",
+        "import Route from '@/navigation/routes';",
+        "import { fonts } from '@/assets/fonts';",
+        "$component-imports",
+        "import { colors } from '@/assets/Colors';",
+        "import { Button } from 'react-native-theme-component';"
+      ],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
       ],
       "functions": [
         {

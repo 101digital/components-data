@@ -1,0 +1,38 @@
+{
+  "id": "loyalty-profile-component",
+  "name": "Loyalty Profile Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/101digital/loyalty-profile-component.git"
+  },
+  "config": {
+    "env": {
+      "development": {
+        "loyaltyBaseUrl": "https://api-neobank-dev.101digital.io/loyalty-profile-service/1.0.0"
+      },
+      "staging": {
+        "loyaltyBaseUrl": "https://api-neobank-dev.101digital.io/loyalty-profile-service/1.0.0"
+      },
+      "production": {
+        "loyaltyBaseUrl": "https://api-neobank-dev.101digital.io/loyalty-profile-service/1.0.0"
+      }
+    }
+  },
+  "dependencies": [],
+  "templates": [
+    {
+      "id": "loyalty-profile-card-template",
+      "templateName": "Home Screen",
+      "componentName": "LoyaltyProfileComponent",
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
+    }
+  ],
+  "texts": {}
+}

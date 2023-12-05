@@ -31,6 +31,32 @@
         "        </>"
       ],
       "functions": []
+    },
+    {
+      "id": "carousel-template",
+      "templateName": "Home Screen",
+      "componentName": "ThemeComponent",
+      "imports": ["$component-imports","import { ScrollView } from 'react-native';"],
+      "headers": [],
+      "renders": [
+        "        <View style={styles.listAccountItemSection} testID='account-details-container'>",
+        "          <ScrollView style={{paddingHorizontal:15}} horizontal={true} showsHorizontalScrollIndicator={false}>",
+        "              $carousel-items",
+        "          </ScrollView>",
+        "        </View>"
+      ],
+      "functions": [],
+      "styles":[
+        "  horizontalSpacing: { width: 12 },",
+        "  listAccountItemSection: {",
+        "    paddingVertical: 0,",
+        "  },",
+        "  cardItemWrapper: {",
+        "    // borderRadius: 24,",
+        "    width: 350,",
+        "    paddingRight:15,",
+        "  }"
+      ]
     }
   ],
   "texts": {

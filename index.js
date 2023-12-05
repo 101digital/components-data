@@ -14,6 +14,8 @@ const registerComponentData = require("./data/register-component.json");
 const userProfileComponentData = require("./data/user-profile-component-data.json");
 const dashboardComponentData = require("./data/dashboard-component-data.json");
 const financialProfileComponentData = require("./data/financial-profile-component-data.json");
+const loyaltyProfileComponentData = require("./data/loyalty-profile-component-data.json");
+
 const unitTestConfiguration = require("./data/unit-test-config.json");
 
 exports.getDataByComponentId = id => {
@@ -50,6 +52,8 @@ exports.getDataByComponentId = id => {
       return dashboardComponentData;
     case "financial-profile-component":
       return financialProfileComponentData;
+    case "loyalty-profile-component":
+      return loyaltyProfileComponentData;
     case "unit-test-configuration":
       return unitTestConfiguration;
     default:

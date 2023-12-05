@@ -200,9 +200,20 @@
       "id": "financial-profile-summary-template",
       "templateName": "Home Screen",
       "componentName": "FinancialProfileComponent",
-      "imports": [
-        "$component-imports"
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
       ],
+      "functions": []
+    },
+    {
+      "id": "settings-with-user-details-template",
+      "templateName": "Home Screen",
+      "componentName": "userSettingsComponent",
+      "imports": ["$component-imports"],
       "headers": [],
       "renders": [
         "        <>",
