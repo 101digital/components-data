@@ -842,7 +842,7 @@
         "import { LoginComponent } from 'react-native-auth-component';",
         "import { Switch } from 'react-native';",
         "import { colors } from '@/assets/Colors';",
-        "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';",
+        "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';"
       ],
       "headers": [
         "  const [appLanguage, setAppLanguage] = useState<APP_LOCALE>(APP_LOCALE.EN);",
