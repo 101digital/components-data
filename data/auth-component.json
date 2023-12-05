@@ -17,14 +17,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       },
       "staging": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -39,14 +39,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       },
       "production": {
         "clientId": "MlSOSFCfPEOb7QfeYVhmOM9leoEa",
@@ -61,14 +61,14 @@
         "authorizationBaseUrl": "https://sandbox.101digital.io/oauth2/authorize",
         "revocationBaseUrl": "https://sandbox.101digital.io/revoke",
         "endSessionBaseUrl": "https://sandbox.101digital.io/oidc/logout",
-        "ENV_ID":"1579f597-af37-43d3-a8b9-5dbda5231623",
-        "APP_ID":"80a1653d-b5e4-475a-9fe0-f287d81d8e49",
-        "CODE_CHALLENGE":"0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
-        "CODE_VERIFIER":"DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
-        "BANK_ID":"ACDBMYK2",
-        "AUTH_URL":"https://auth.pingone.asia/",
-        "REDIRECT_URI":"https://www.example.com",
-        "API_BASE_URL":"https://api-neobank-dev.101digital.io/"
+        "ENV_ID": "1579f597-af37-43d3-a8b9-5dbda5231623",
+        "APP_ID": "80a1653d-b5e4-475a-9fe0-f287d81d8e49",
+        "CODE_CHALLENGE": "0ChgyTpVc9hkDJ3ag43oCPNpLanxTE111a_q4vYfUR8",
+        "CODE_VERIFIER": "DC0m3unbBdWUn5cDTc5j22DixyQHgdrDJQAYBEwwtR2ybYMv04jf0E0feQ",
+        "BANK_ID": "ACDBMYK2",
+        "AUTH_URL": "https://auth.pingone.asia/",
+        "REDIRECT_URI": "https://www.example.com",
+        "API_BASE_URL": "https://api-neobank-dev.101digital.io/"
       }
     }
   },
@@ -105,9 +105,12 @@
       "templateName": "Login with email template",
       "componentName": "LoginComponent",
       "imports": [
-        "import { LoginComponent } from 'react-native-auth-component';"
+        "import { LoginComponent } from 'react-native-auth-component';",
+        "import { ThemeContext } from 'react-native-theme-component';"
       ],
-      "headers": [],
+      "headers": [
+        "  const { i18n } = useContext(ThemeContext);"
+      ],
       "renders": [
         "      <LoginComponent",
         "        Root={{",
@@ -842,9 +845,11 @@
         "import { LoginComponent } from 'react-native-auth-component';",
         "import { Switch } from 'react-native';",
         "import { colors } from '@/assets/Colors';",
-        "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';"
+        "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';",
+        "import {ThemeContext} from 'react-native-theme-component';"
       ],
       "headers": [
+        "  const { i18n } = useContext(ThemeContext);",
         "  const [appLanguage, setAppLanguage] = useState<APP_LOCALE>(APP_LOCALE.EN);",
         "  const onSwitchLanguage = () => {",
         "  if (appLanguage === APP_LOCALE.VI) {",

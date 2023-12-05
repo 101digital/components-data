@@ -56,7 +56,12 @@
         ],
         "defaultDueDate": 15,
         "maxDocumentSize": 2097151,
-        "documentTypes": ["jpeg", "jpg", "png", "heic"]
+        "documentTypes": [
+          "jpeg",
+          "jpg",
+          "png",
+          "heic"
+        ]
       },
       "staging": {
         "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0",
@@ -107,7 +112,12 @@
         ],
         "defaultDueDate": 15,
         "maxDocumentSize": 2097151,
-        "documentTypes": ["jpeg", "jpg", "png", "heic"]
+        "documentTypes": [
+          "jpeg",
+          "jpg",
+          "png",
+          "heic"
+        ]
       },
       "production": {
         "invoiceBaseUrl": "https://api.101digital.io/invoice-service/v2.0",
@@ -158,7 +168,12 @@
         ],
         "defaultDueDate": 15,
         "maxDocumentSize": 2097151,
-        "documentTypes": ["jpeg", "jpg", "png", "heic"]
+        "documentTypes": [
+          "jpeg",
+          "jpg",
+          "png",
+          "heic"
+        ]
       }
     }
   },
@@ -263,7 +278,9 @@
       "id": "invoice-list-template-2",
       "templateName": "Invoice list template 2",
       "componentName": "InvoiceListComponent",
-      "imports": ["import { InvoiceContext, InvoiceListComponent } from 'invoice-component';"],
+      "imports": [
+        "import { InvoiceContext, InvoiceListComponent } from 'invoice-component';"
+      ],
       "headers": [
         "  const {",
         "    allInvoices,",
@@ -334,7 +351,9 @@
       "imports": [
         "import { InvoiceDetailComponent, Invoice, InvoiceContext } from 'invoice-component';"
       ],
-      "headers": ["  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"],
+      "headers": [
+        "  const { errorAddPayment, clearErrors } = useContext(InvoiceContext);"
+      ],
       "renders": [
         "      <InvoiceDetailComponent",
         "        invoiceId={route.params.invoiceId}",
@@ -373,9 +392,13 @@
       "id": "invoice-attachment-template-1",
       "templateName": "Invoice attachment template 1",
       "componentName": "InvoiceAttachmentComponent",
-      "imports": ["import { InvoiceAttachmentComponent } from 'invoice-component';"],
+      "imports": [
+        "import { InvoiceAttachmentComponent } from 'invoice-component';"
+      ],
       "headers": [],
-      "renders": ["      <InvoiceAttachmentComponent editable={route.params.editable} />"],
+      "renders": [
+        "      <InvoiceAttachmentComponent editable={route.params.editable} />"
+      ],
       "functions": []
     },
     {
@@ -593,8 +616,12 @@
       "id": "invoice-payment-template-1",
       "templateName": "Invoice payment template 1",
       "componentName": "InvoicePaymentComponent",
-      "imports": ["import { InvoicePaymentComponent, InvoiceContext } from 'invoice-component';"],
-      "headers": ["  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"],
+      "imports": [
+        "import { InvoicePaymentComponent, InvoiceContext } from 'invoice-component';"
+      ],
+      "headers": [
+        "  const { errorUpdatePayment, clearErrors } = useContext(InvoiceContext);"
+      ],
       "renders": [
         "      <InvoicePaymentComponent",
         "        invoice={route.params.invoice}",
@@ -613,7 +640,7 @@
         "  showChaseInvoice,",
         "  showShareInvoice,",
         "} from 'invoice-component';",
-        "import { formatCurrency, AlertModal } from 'react-native-theme-component';"
+        "import { formatCurrency, ThemeContext, AlertModal } from 'react-native-theme-component';"
       ],
       "headers": [
         "  const [selectedInvoice, setSelectedInvoice] = useState<Invoice | undefined>(undefined);",
@@ -631,7 +658,7 @@
         "    errorDeleteInvoice,",
         "    errorLoadInvoiceDetail,",
         "  } = useContext(InvoiceContext);",
-        "  const { currencies } = useContext(ThemeContext);",
+        "  const { currencies, i18n } = useContext(ThemeContext);",
         "  const clearInvoiceErrors = useContext(InvoiceContext).clearErrors;",
         "",
         "  useEffect(() => {",
