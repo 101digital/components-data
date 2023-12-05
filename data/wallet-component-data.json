@@ -38,7 +38,7 @@
       "imports": [
         "import { WalletListComponent, WalletListComponentRefs, WalletContext } from '@banking-component/wallet-component';",
         "import { AccountLinkingContext } from '@banking-component/account-linking';",
-        "import { useCurrencyFormat } from 'react-native-theme-component';",
+        "import { ThemeContext, useCurrencyFormat } from 'react-native-theme-component';",
         "import { CompasionRequestParams, ProductContext, RecommandBannerComponent } from 'product-comparison-component';",
         "import { isEmpty } from 'lodash';"
       ],
@@ -54,7 +54,7 @@
         "  } = useContext(WalletContext);",
         "",
         "  const { bankImages, banks, getBanks } = useContext(AccountLinkingContext);",
-        "  const { colors } = useContext(ThemeContext);",
+        "  const { i18n, colors } = useContext(ThemeContext);",
         "  const { getComparisons, comparisons, clearComparisons } = useContext(ProductContext);",
         "",
         "  useEffect(() => {",
