@@ -105,12 +105,9 @@
       "templateName": "Login with email template",
       "componentName": "LoginComponent",
       "imports": [
-        "import { LoginComponent } from 'react-native-auth-component';",
-        "import { ThemeContext } from 'react-native-theme-component';"
+        "import { LoginComponent } from 'react-native-auth-component';"
       ],
-      "headers": [
-        "  const { i18n } = useContext(ThemeContext);"
-      ],
+      "headers": [],
       "renders": [
         "      <LoginComponent",
         "        Root={{",
@@ -846,10 +843,8 @@
         "import { Switch } from 'react-native';",
         "import { colors } from '@/assets/Colors';",
         "import {APP_LOCALE, changeLanguage} from '@/translations/translation-config';",
-        "import {ThemeContext} from 'react-native-theme-component';"
       ],
       "headers": [
-        "  const { i18n } = useContext(ThemeContext);",
         "  const [appLanguage, setAppLanguage] = useState<APP_LOCALE>(APP_LOCALE.EN);",
         "  const onSwitchLanguage = () => {",
         "  if (appLanguage === APP_LOCALE.VI) {",

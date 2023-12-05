@@ -613,7 +613,7 @@
         "  showChaseInvoice,",
         "  showShareInvoice,",
         "} from 'invoice-component';",
-        "import { ThemeContext, formatCurrency, AlertModal } from 'react-native-theme-component';"
+        "import { formatCurrency, AlertModal } from 'react-native-theme-component';"
       ],
       "headers": [
         "  const [selectedInvoice, setSelectedInvoice] = useState<Invoice | undefined>(undefined);",
@@ -631,7 +631,7 @@
         "    errorDeleteInvoice,",
         "    errorLoadInvoiceDetail,",
         "  } = useContext(InvoiceContext);",
-        "  const { i18n, currencies } = useContext(ThemeContext);",
+        "  const { currencies } = useContext(ThemeContext);",
         "  const clearInvoiceErrors = useContext(InvoiceContext).clearErrors;",
         "",
         "  useEffect(() => {",
