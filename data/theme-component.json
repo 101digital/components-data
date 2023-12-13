@@ -60,6 +60,21 @@
         "    paddingRight:15,",
         "  }"
       ]
+    },
+    {
+      "id": "progress-cicle-template",
+      "templateName": "Progress Circle",
+      "componentName": "ProgressCircleComponent",
+      "imports": [
+        "$component-imports"
+      ],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
     }
   ],
   "texts": {
