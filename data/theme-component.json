@@ -62,7 +62,7 @@
       ]
     },
     {
-      "id": "progress-cicle-template",
+      "id": "progress-circle-template",
       "templateName": "Progress Circle",
       "componentName": "ProgressCircleComponent",
       "imports": [
