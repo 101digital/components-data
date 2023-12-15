@@ -32,6 +32,19 @@
         "        </>"
       ],
       "functions": []
+    },
+    {
+      "id": "account-add-funds-template",
+      "templateName": "Add Funds Screen",
+      "componentName": "AddFundsComponent",
+      "imports": ["$component-imports"],
+      "headers": [],
+      "renders": [
+        "        <>",
+        "            $component-name",
+        "        </>"
+      ],
+      "functions": []
     }
   ],
   "texts": {}
